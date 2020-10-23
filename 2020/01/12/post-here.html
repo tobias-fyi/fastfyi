@@ -120,13 +120,13 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h2>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Problem">The Problem<a class="anchor-link" href="#The-Problem"> </a></h3><p>Reddit is an expansive site. Anyone who has spent any significant amount of time on it knows what I mean. There is a subreddit for seemingly every topic anyone could ever want to discuss or even think about (and many that most do not want think about).</p>
+<h2 id="The-Problem">The Problem<a class="anchor-link" href="#The-Problem"> </a></h2><p>Reddit is an expansive site. Anyone who has spent any significant amount of time on it knows what I mean. There is a subreddit for seemingly every topic anyone could ever want to discuss or even think about (and many that most do not want think about).</p>
 <p>Reddit is a powerful site; a tool for connecting and sharing information with like- or unlike-minded individuals around the world. When used well, it can be a very useful resource.</p>
 <p>On the other hand, the deluge of information that's constantly piling into the pages of can be overwhelming and lead to wasted time. As with any tool, it can be used for good or for not-so-good.</p>
 <p>A common problem that Redditors experience, particularly those who are relatively new to the site, is where to post content. Given that there are subreddits for just about everything, with wildly varying degrees of specificity it can be quite overwhelming trying to find the best place for each post.</p>
@@ -154,7 +154,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Solution">The Solution<a class="anchor-link" href="#The-Solution"> </a></h3><p>The goal with the Post Here app, as mentioned, is to provide a tool that makes it quick and easy to find the most appropriate subreddits for any given post. A user would simply provide the title and text of the their prospective post and the app would provide the user with a list of subreddit recommendations.</p>
+<h2 id="The-Solution">The Solution<a class="anchor-link" href="#The-Solution"> </a></h2><p>The goal with the Post Here app, as mentioned, is to provide a tool that makes it quick and easy to find the most appropriate subreddits for any given post. A user would simply provide the title and text of the their prospective post and the app would provide the user with a list of subreddit recommendations.</p>
 <p>Recommendations are produced by a model attempts to predict which subreddit a given post would belong to. The model was built using Scikit-learn, and was trained on a large dataset of reddit posts. In order to serve the recommendations to the web app, an API was built using Flask and deployed to Heroku.</p>
 <p>The live version of the app is linked below.</p>
 
@@ -171,7 +171,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="My-Role">My Role<a class="anchor-link" href="#My-Role"> </a></h3><p>I worked on the Post Here app with a remote, interdisciplinary team of data scientists, machine learning engineers, and web developers. I was one of two machine learning engineers on the team, responsible for the entire process of building and training the machine learning models. The two data scientists on the team were primarily responsible for building and deploying the API.</p>
+<h2 id="My-Role">My Role<a class="anchor-link" href="#My-Role"> </a></h2><p>I worked on the Post Here app with a remote, interdisciplinary team of data scientists, machine learning engineers, and web developers. I was one of two machine learning engineers on the team, responsible for the entire process of building and training the machine learning models. The two data scientists on the team were primarily responsible for building and deploying the API.</p>
 <p>The main challenge we ran into, which directed much of the iterative process, was scope management.</p>
 <p>At this point in my machine learning journey, this was one of the larger datasets that I'd taken on. Uncompressed, the dataset we used was over 800mb of mostly natural language text. The dataset and the time constraint—we had less than four full days of work to finish the project—were the primary causes of the challenges we ended up facing.</p>
 <p>With such a dataset, one important concept we had to keep in mind was the <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">curse of dimensionality</a>, which is basically a title for the various problems and phenomena that occur when dealing with extremely highly dimensional datasets. When processed, a natural language dataset of this size would likely fall prey to this curse and may prove somewhat unwieldy without large amounts of processing power.</p>
@@ -184,7 +184,6 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
 <h2 id="Imports-and-Configuration">Imports and Configuration<a class="anchor-link" href="#Imports-and-Configuration"> </a></h2>
 </div>
 </div>
@@ -260,7 +259,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
-<h2 id="The-Data">The Data<a class="anchor-link" href="#The-Data"> </a></h2>
+<h1 id="The-Data">The Data<a class="anchor-link" href="#The-Data"> </a></h1>
 </div>
 </div>
 </div>
@@ -274,7 +273,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Wrangling-and-Exploration">Wrangling and Exploration<a class="anchor-link" href="#Wrangling-and-Exploration"> </a></h3><p>First, I needed to reduce the size of the dataset. I defined a subset of 12 categories which I thought were most relevant to the task at hand, and used that list to do the initial pruning. Those 12 categories left me with 305 unique subreddits and 305,000 rows. The list I used was as follows:</p>
+<h2 id="Wrangling-and-Exploration">Wrangling and Exploration<a class="anchor-link" href="#Wrangling-and-Exploration"> </a></h2><p>First, I needed to reduce the size of the dataset. I defined a subset of 12 categories which I thought were most relevant to the task at hand, and used that list to do the initial pruning. Those 12 categories left me with 305 unique subreddits and 305,000 rows. The list I used was as follows:</p>
 <ul>
 <li>health</li>
 <li>profession</li>
@@ -388,7 +387,7 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Nulls">Nulls<a class="anchor-link" href="#Nulls"> </a></h4><p>Kaggle says that 12%, 25%, and 39% of the subreddit, title, and selftext columns are null, respectively. If that is indeed the case, they did not get read into the dataframe correctly. However, it could be an error on Kaggle's part, seeing as there is no mention of these anywhere else in the description or blog post or article, nor sign of them during my explorations.</p>
+<h3 id="Nulls">Nulls<a class="anchor-link" href="#Nulls"> </a></h3><p>Kaggle says that 12%, 25%, and 39% of the subreddit, title, and selftext columns are null, respectively. If that is indeed the case, they did not get read into the dataframe correctly. However, it could be an error on Kaggle's part, seeing as there is no mention of these anywhere else in the description or blog post or article, nor sign of them during my explorations.</p>
 
 </div>
 </div>
@@ -432,7 +431,7 @@ dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Preprocess">Preprocess<a class="anchor-link" href="#Preprocess"> </a></h4><p>To prune the list of subreddits, I'll load in the <code>subreddit_info.csv</code> file, join, then choose a certain number of categories (category_1) to filter on.</p>
+<h3 id="Preprocessing">Preprocessing<a class="anchor-link" href="#Preprocessing"> </a></h3><p>To prune the list of subreddits, I'll load in the <code>subreddit_info.csv</code> file, join, then choose a certain number of categories (category_1) to filter on.</p>
 
 </div>
 </div>
@@ -1176,13 +1175,13 @@ Name: subreddit, Length: 305, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
-<h2 id="Modeling">Modeling<a class="anchor-link" href="#Modeling"> </a></h2>
+<h1 id="Modeling">Modeling<a class="anchor-link" href="#Modeling"> </a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Label-Encoding">Label Encoding<a class="anchor-link" href="#Label-Encoding"> </a></h3>
+<h2 id="Label-Encoding">Label Encoding<a class="anchor-link" href="#Label-Encoding"> </a></h2>
 </div>
 </div>
 </div>
@@ -1230,7 +1229,7 @@ Name: subreddit, Length: 305, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Vectorization">Vectorization<a class="anchor-link" href="#Vectorization"> </a></h3><p>A vectorizer is used to extract numerical features (information) from a corpus of natural language text. I used a <a href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag-of-words</a> method of vectorization, which for the most part, disregards grammar.</p>
+<h2 id="Vectorization">Vectorization<a class="anchor-link" href="#Vectorization"> </a></h2><p>A vectorizer is used to extract numerical features (information) from a corpus of natural language text. I used a <a href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag-of-words</a> method of vectorization, which for the most part, disregards grammar.</p>
 <p>The output of this vectorizer is a document-term matrix, with the documents (observations, or rows) on one axes and the terms (words, bigrams) on the other. This matrix can be thought of as a sort of vocabulary, or text-number translator.</p>
 <p>At first, the "vocabulary" derived from the corpus using the vectorizer was the largest object when serialized. Luckily, there are many options and parameters available to reduce its size, most of which are simply different methods for reducing the number of features (terms) it contains.</p>
 <p>One option is to put a hard limit of 100,000 on the number of features in the vocabulary. This is a simple, naive limit on the generated features, and thus, the resulting vocabulary size.</p>
@@ -1333,7 +1332,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Feature-Selection">Feature Selection<a class="anchor-link" href="#Feature-Selection"> </a></h3><p>As mentioned previously, the size of the corpus means the dimensionality of the featureset after vectorization will be very high. I passed in 100,000 as the maximum number of features to the vectorizer, limiting the initial size of the vocab. However, the features would have to be reduced more before training the model, as it is generally not good practice to have a larger number of features (100,000) than observations (91,500).</p>
+<h2 id="Feature-Selection">Feature Selection<a class="anchor-link" href="#Feature-Selection"> </a></h2><p>As mentioned previously, the size of the corpus means the dimensionality of the featureset after vectorization will be very high. I passed in 100,000 as the maximum number of features to the vectorizer, limiting the initial size of the vocab. However, the features would have to be reduced more before training the model, as it is generally not good practice to have a larger number of features (100,000) than observations (91,500).</p>
 <p>To reduce it down from that 100,000, I used a process called select k best, which does exactly what it sounds like: selects a certain number of the best features. The key aspect of this process is how to measure the value of the features; how to find which ones are the "best". The scoring function I used in this case is called <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.chi2.html">ch2</a> (chi-squared).</p>
 <p>This function calculates chi-squared statistics between each feature and the target, measuring the dependence, or correlation, between them. The intuition here is that features which are more correlated with the target are more likely to be useful to the model.</p>
 <p>I played around with some different values for the maximum number of features to be selected. Ultimately, I was once again limited by the size of the free Heroku Dyno, and settled on 20,000. This allowed the deployment to go smoothly while retaining enough information for the model to have adequate performance.</p>
@@ -1384,7 +1383,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-validation">Model validation<a class="anchor-link" href="#Model-validation"> </a></h3><p>In this case, the model has a target that it is attempting to predict—a supervised problem. Therefore, the performance can be measured on validation and test sets.</p>
+<h2 id="Model-validation">Model validation<a class="anchor-link" href="#Model-validation"> </a></h2><p>In this case, the model has a target that it is attempting to predict—a supervised problem. Therefore, the performance can be measured on validation and test sets.</p>
 <p>To test out the recommendations I copied some posts and put them through the prediction pipeline to see what kinds of subreddits were getting recommended. For the most part, the predictions were decent.</p>
 <p>The cases where the recommendations were a little less than ideal happened when I pulled example posts from subreddits that were not in the training data. The model generally did a good job recommending similar subreddits.</p>
 
@@ -1393,7 +1392,7 @@ Average length is: 4.229050279329609.
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Baseline">Baseline<a class="anchor-link" href="#Baseline"> </a></h4><p>For the baseline model, I decided to go with a basic random forest. This choice was somewhat arbitrary, though I was curious to see how a random forest would do with such a high target cardinality (number of classes/categories).</p>
+<h3 id="Baseline">Baseline<a class="anchor-link" href="#Baseline"> </a></h3><p>For the baseline model, I decided to go with a basic random forest. This choice was somewhat arbitrary, though I was curious to see how a random forest would do with such a high target cardinality (number of classes/categories).</p>
 <p>The baseline precision-at-k metrics for the random forest on the validation set were .54, .63, and .65, for <code>k</code> of 1, 3, and 5, respectively.</p>
 
 </div>
@@ -1532,7 +1531,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Multinomial-Naive-Bayes">Multinomial Naive Bayes<a class="anchor-link" href="#Multinomial-Naive-Bayes"> </a></h4><p>Multinomial naive Bayes is a probabilistic learning method for multinomially distributed data, and one of two classic naive Bayes algorithms used for text classification. I decided to iterate with this algorithm because it is meant for text classification tasks.</p>
+<h3 id="Multinomial-Naive-Bayes">Multinomial Naive Bayes<a class="anchor-link" href="#Multinomial-Naive-Bayes"> </a></h3><p>Multinomial naive Bayes is a probabilistic learning method for multinomially distributed data, and one of two classic naive Bayes algorithms used for text classification. I decided to iterate with this algorithm because it is meant for text classification tasks.</p>
 <p>The precision-at-k metrics for the final Multinomial naive Bayes model on the validation set were .76, .88, and .9188, for <code>k</code> of 1, 3, and 5, respectively. Performance on the test set was nearly identical: .75, .88, and .9159.</p>
 
 </div>
@@ -1574,7 +1573,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Evaluate-on-validation-set">Evaluate on validation set<a class="anchor-link" href="#Evaluate-on-validation-set"> </a></h4>
+<h3 id="Evaluate-on-validation-set">Evaluate on validation set<a class="anchor-link" href="#Evaluate-on-validation-set"> </a></h3>
 </div>
 </div>
 </div>
@@ -1654,7 +1653,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Evaluate-on-test-set">Evaluate on test set<a class="anchor-link" href="#Evaluate-on-test-set"> </a></h4>
+<h3 id="Evaluate-on-test-set">Evaluate on test set<a class="anchor-link" href="#Evaluate-on-test-set"> </a></h3>
 </div>
 </div>
 </div>
@@ -1734,7 +1733,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Recommendations">Recommendations<a class="anchor-link" href="#Recommendations"> </a></h3><p>The API should return a list of recommendations, not a single prediction. To accomplish this, I wrote a function that returns the top 5 most likely subreddits and their respective probabilities.</p>
+<h2 id="Recommendations">Recommendations<a class="anchor-link" href="#Recommendations"> </a></h2><p>The API should return a list of recommendations, not a single prediction. To accomplish this, I wrote a function that returns the top 5 most likely subreddits and their respective probabilities.</p>
 
 </div>
 </div>
@@ -1985,7 +1984,7 @@ Average length is: 4.229050279329609.
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-deployment">Model deployment<a class="anchor-link" href="#Model-deployment"> </a></h3><p>As mentioned, the model, vocab, and feature selector were all serialized using Python's pickle module. In the Flask app, the pickled objects are loaded and ready for use, just like that.</p>
+<h2 id="Model-deployment">Model deployment<a class="anchor-link" href="#Model-deployment"> </a></h2><p>As mentioned, the model, vocab, and feature selector were all serialized using Python's pickle module. In the Flask app, the pickled objects are loaded and ready for use, just like that.</p>
 <p>I will go over the details of how the Flask app was set up in a separate blog post.</p>
 
 </div>
@@ -1994,7 +1993,7 @@ Average length is: 4.229050279329609.
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr />
-<h2 id="Final-Thoughts">Final Thoughts<a class="anchor-link" href="#Final-Thoughts"> </a></h2><p>For me, the most important and valuable aspects of this project were mainly surrounding the challenge of scope management. I constantly had to ask myself, "What is the best version of this I can create given our limitations?"</p>
+<h1 id="Final-Thoughts">Final Thoughts<a class="anchor-link" href="#Final-Thoughts"> </a></h1><p>For me, the most important and valuable aspects of this project were mainly surrounding the challenge of scope management. I constantly had to ask myself, "What is the best version of this I can create given our limitations?"</p>
 <p>At first, I thought it would be feasible to predict all of the 1,000+ subreddits in the data, and wasted hours of valuable time attempting to do so. While I had tested various strategies of reducing the complexity of the model, the performance was rather terrible when it was trained on 100 or less examples of each of the complete list of subreddits.</p>
 <p>The data scientist who I primarily worked with (we had one data scientist in addition to him and one other machine learning engineer, both of whom did not contribute significantly to the project) kept telling me that I should try reducing the number of classes first, allowing for more examples of each class and fewer classes for the model to predict.</p>
 <p>Ultimately, this is the strategy that worked best, and I wasted valuable time by not listening to him the first few times he recommended that strategy. Good teamwork requires the members being humble and listening, something that I have taken to heart since the conclusion of this project.</p>
@@ -2004,7 +2003,7 @@ Average length is: 4.229050279329609.
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Scope-Management,-Revisited">Scope Management, Revisited<a class="anchor-link" href="#Scope-Management,-Revisited"> </a></h3><p>As time was very short while building this initial recommendation API, there are many things that we wished we could have done but simply did not have the time. Here are a few of the more obvious improvements that could be made.</p>
+<h2 id="Scope-Management,-Revisited">Scope Management, Revisited<a class="anchor-link" href="#Scope-Management,-Revisited"> </a></h2><p>As time was very short while building this initial recommendation API, there are many things that we wished we could have done but simply did not have the time. Here are a few of the more obvious improvements that could be made.</p>
 <p>The first, and most obvious one, is to simply deploy to a more powerful server, such as one hosted on AWS Elastic Beanstalk or EC2. This way, we could use the entire dataset to train an optimal model without worrying (as much) about memory limits.</p>
 <p>Second, I could use a Scikit-learn pipeline to validate and tune hyperparameters using cross-validation, instead of a separate validation set. Also, this pipeline could be serialized as a single large object, rather than as separate pieces (encoder, vectorizer, feature selector, and classifier). As a final note for this particular train of thought, <a href="https://joblib.readthedocs.io/en/latest/">Joblib</a> could potentially provide more efficient serialization than the Pickle module, allowing a more complex pipeline to be deployed on the same server.</p>
 <p>Third, a model could've been trained to classify the input post first into a broad category. Then, some sort of model could be used to to classify into a specific subreddit within that broad category. I'm not sure about the feasibility of the second part of this idea, but thought it could be an interesting one to explore.</p>
