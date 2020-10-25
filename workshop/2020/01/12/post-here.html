@@ -10,13 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Worked as a machine learning engineer on a remote, interdisciplinary team to build an app for recommending subreddits." />
 <meta property="og:description" content="Worked as a machine learning engineer on a remote, interdisciplinary team to build an app for recommending subreddits." />
-<link rel="canonical" href="https://tobias-fyi.github.io/fastfyi/2020/01/12/post-here.html" />
-<meta property="og:url" content="https://tobias-fyi.github.io/fastfyi/2020/01/12/post-here.html" />
+<link rel="canonical" href="https://tobias-fyi.github.io/fastfyi/workshop/2020/01/12/post-here.html" />
+<meta property="og:url" content="https://tobias-fyi.github.io/fastfyi/workshop/2020/01/12/post-here.html" />
 <meta property="og:site_name" content="fastpages" />
+<meta property="og:image" content="https://tobias-fyi.github.io/fastfyi/images/post-here-landing-crop.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-01-12T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://tobias-fyi.github.io/fastfyi/2020/01/12/post-here.html","@type":"BlogPosting","headline":"Post Here","dateModified":"2020-01-12T00:00:00-06:00","datePublished":"2020-01-12T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://tobias-fyi.github.io/fastfyi/2020/01/12/post-here.html"},"description":"Worked as a machine learning engineer on a remote, interdisciplinary team to build an app for recommending subreddits.","@context":"https://schema.org"}</script>
+{"url":"https://tobias-fyi.github.io/fastfyi/workshop/2020/01/12/post-here.html","@type":"BlogPosting","headline":"Post Here","dateModified":"2020-01-12T00:00:00-06:00","datePublished":"2020-01-12T00:00:00-06:00","image":"https://tobias-fyi.github.io/fastfyi/images/post-here-landing-crop.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tobias-fyi.github.io/fastfyi/workshop/2020/01/12/post-here.html"},"description":"Worked as a machine learning engineer on a remote, interdisciplinary team to build an app for recommending subreddits.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastfyi/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tobias-fyi.github.io/fastfyi/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastfyi/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -82,6 +83,13 @@ window.onload = wrap_img;
 </span></p>
 
     
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastfyi/categories/#workshop">workshop</a>
+        
+      
+      </p>
+    
 
     
       
@@ -108,7 +116,48 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Introduction">Introduction </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#The-Problem">The Problem </a></li>
+<li class="toc-entry toc-h2"><a href="#The-Solution">The Solution </a></li>
+<li class="toc-entry toc-h2"><a href="#My-Role">My Role </a></li>
+<li class="toc-entry toc-h2"><a href="#Imports-and-Configuration">Imports and Configuration </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#The-Data">The Data </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Wrangling-and-Exploration">Wrangling and Exploration </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Nulls">Nulls </a></li>
+<li class="toc-entry toc-h3"><a href="#Preprocessing">Preprocessing </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Modeling">Modeling </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Label-Encoding">Label Encoding </a></li>
+<li class="toc-entry toc-h2"><a href="#Vectorization">Vectorization </a></li>
+<li class="toc-entry toc-h2"><a href="#Feature-Selection">Feature Selection </a></li>
+<li class="toc-entry toc-h2"><a href="#Model-validation">Model validation </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Baseline">Baseline </a></li>
+<li class="toc-entry toc-h3"><a href="#Multinomial-Naive-Bayes">Multinomial Naive Bayes </a></li>
+<li class="toc-entry toc-h3"><a href="#Evaluate-on-validation-set">Evaluate on validation set </a></li>
+<li class="toc-entry toc-h3"><a href="#Evaluate-on-test-set">Evaluate on test set </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Recommendations">Recommendations </a></li>
+<li class="toc-entry toc-h2"><a href="#Model-deployment">Model deployment </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Final-Thoughts">Final Thoughts </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Scope-Management,-Revisited">Scope Management, Revisited </a></li>
+</ul>
+</li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -117,15 +166,23 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h1>
+<hr>
+<h1 id="Introduction">
+<a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
+</h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Problem">The Problem<a class="anchor-link" href="#The-Problem"> </a></h2><p>Reddit is an expansive site. Anyone who has spent any significant amount of time on it knows what I mean. There is a subreddit for seemingly every topic anyone could ever want to discuss or even think about (and many that most do not want think about).</p>
+<h2 id="The-Problem">
+<a class="anchor" href="#The-Problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Problem<a class="anchor-link" href="#The-Problem"> </a>
+</h2>
+<p>Reddit is an expansive site. Anyone who has spent any significant amount of time on it knows what I mean. There is a subreddit for seemingly every topic anyone could ever want to discuss or even think about (and many that most do not want think about).</p>
 <p>Reddit is a powerful site; a tool for connecting and sharing information with like- or unlike-minded individuals around the world. When used well, it can be a very useful resource.</p>
 <p>On the other hand, the deluge of information that's constantly piling into the pages of can be overwhelming and lead to wasted time. As with any tool, it can be used for good or for not-so-good.</p>
 <p>A common problem that Redditors experience, particularly those who are relatively new to the site, is where to post content. Given that there are subreddits for just about everything, with wildly varying degrees of specificity it can be quite overwhelming trying to find the best place for each post.</p>
@@ -144,33 +201,44 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/post_here/post-here-landing.png" alt="Post Here: Subreddit Suggester" title="[Post Here: Subreddit Suggester" /></p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/post_here/post-here-landing.png" alt="Post Here: Subreddit Suggester" title="[Post Here: Subreddit Suggester"></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Solution">The Solution<a class="anchor-link" href="#The-Solution"> </a></h2><p>The goal with the Post Here app, as mentioned, is to provide a tool that makes it quick and easy to find the most appropriate subreddits for any given post. A user would simply provide the title and text of the their prospective post and the app would provide the user with a list of subreddit recommendations.</p>
+<h2 id="The-Solution">
+<a class="anchor" href="#The-Solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Solution<a class="anchor-link" href="#The-Solution"> </a>
+</h2>
+<p>The goal with the Post Here app, as mentioned, is to provide a tool that makes it quick and easy to find the most appropriate subreddits for any given post. A user would simply provide the title and text of the their prospective post and the app would provide the user with a list of subreddit recommendations.</p>
 <p>Recommendations are produced by a model attempts to predict which subreddit a given post would belong to. The model was built using Scikit-learn, and was trained on a large dataset of reddit posts. In order to serve the recommendations to the web app, an API was built using Flask and deployed to Heroku.</p>
 <p>The live version of the app is linked below.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><a href="https://github.com/tobias-fyi/post_here_ds">Post Here:The Subreddit Suggester</a></p>
+<blockquote>
+<p><a href="https://github.com/tobias-fyi/post_here_ds">Post Here:The Subreddit Suggester</a></p>
 </blockquote>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="My-Role">My Role<a class="anchor-link" href="#My-Role"> </a></h2><p>I worked on the Post Here app with a remote, interdisciplinary team of data scientists, machine learning engineers, and web developers. I was one of two machine learning engineers on the team, responsible for the entire process of building and training the machine learning models. The two data scientists on the team were primarily responsible for building and deploying the API.</p>
+<h2 id="My-Role">
+<a class="anchor" href="#My-Role" aria-hidden="true"><span class="octicon octicon-link"></span></a>My Role<a class="anchor-link" href="#My-Role"> </a>
+</h2>
+<p>I worked on the Post Here app with a remote, interdisciplinary team of data scientists, machine learning engineers, and web developers. I was one of two machine learning engineers on the team, responsible for the entire process of building and training the machine learning models. The two data scientists on the team were primarily responsible for building and deploying the API.</p>
 <p>The main challenge we ran into, which directed much of the iterative process, was scope management.</p>
 <p>At this point in my machine learning journey, this was one of the larger datasets that I'd taken on. Uncompressed, the dataset we used was over 800mb of mostly natural language text. The dataset and the time constraint—we had less than four full days of work to finish the project—were the primary causes of the challenges we ended up facing.</p>
 <p>With such a dataset, one important concept we had to keep in mind was the <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">curse of dimensionality</a>, which is basically a title for the various problems and phenomena that occur when dealing with extremely highly dimensional datasets. When processed, a natural language dataset of this size would likely fall prey to this curse and may prove somewhat unwieldy without large amounts of processing power.</p>
@@ -181,9 +249,12 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Imports-and-Configuration">Imports and Configuration<a class="anchor-link" href="#Imports-and-Configuration"> </a></h2>
+<h2 id="Imports-and-Configuration">
+<a class="anchor" href="#Imports-and-Configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Imports and Configuration<a class="anchor-link" href="#Imports-and-Configuration"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -255,14 +326,18 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h1 id="The-Data">The Data<a class="anchor-link" href="#The-Data"> </a></h1>
+<hr>
+<h1 id="The-Data">
+<a class="anchor" href="#The-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Data<a class="anchor-link" href="#The-Data"> </a>
+</h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The dataset we ended up using to train the recommendation system is called the <a href="https://www.kaggle.com/mswarbrickjones/reddit-selfposts">Reddit Self-Post Classification Task dataset</a>, available on Kaggle thanks to Evolution AI. The full dataset clocks in at over 800mb, containing 1,013,000 rows: 1,000 posts each from 1,013 subreddits.</p>
 <p>For more details on the dataset, including a nice interactive plot of all of the subreddits, refer to Evolution AI's <a href="https://evolution.ai//blog/page/5/an-imagenet-like-text-classification-task-based-on-reddit-posts/">blog post</a>.</p>
@@ -270,9 +345,13 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wrangling-and-Exploration">Wrangling and Exploration<a class="anchor-link" href="#Wrangling-and-Exploration"> </a></h2><p>First, I needed to reduce the size of the dataset. I defined a subset of 12 categories which I thought were most relevant to the task at hand, and used that list to do the initial pruning. Those 12 categories left me with 305 unique subreddits and 305,000 rows. The list I used was as follows:</p>
+<h2 id="Wrangling-and-Exploration">
+<a class="anchor" href="#Wrangling-and-Exploration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wrangling and Exploration<a class="anchor-link" href="#Wrangling-and-Exploration"> </a>
+</h2>
+<p>First, I needed to reduce the size of the dataset. I defined a subset of 12 categories which I thought were most relevant to the task at hand, and used that list to do the initial pruning. Those 12 categories left me with 305 unique subreddits and 305,000 rows. The list I used was as follows:</p>
 <ul>
 <li>health</li>
 <li>profession</li>
@@ -301,7 +380,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/rspct.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"assets/data/rspct.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rspct</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">rspct</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -384,9 +463,13 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Nulls">Nulls<a class="anchor-link" href="#Nulls"> </a></h3><p>Kaggle says that 12%, 25%, and 39% of the subreddit, title, and selftext columns are null, respectively. If that is indeed the case, they did not get read into the dataframe correctly. However, it could be an error on Kaggle's part, seeing as there is no mention of these anywhere else in the description or blog post or article, nor sign of them during my explorations.</p>
+<h3 id="Nulls">
+<a class="anchor" href="#Nulls" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nulls<a class="anchor-link" href="#Nulls"> </a>
+</h3>
+<p>Kaggle says that 12%, 25%, and 39% of the subreddit, title, and selftext columns are null, respectively. If that is indeed the case, they did not get read into the dataframe correctly. However, it could be an error on Kaggle's part, seeing as there is no mention of these anywhere else in the description or blog post or article, nor sign of them during my explorations.</p>
 
 </div>
 </div>
@@ -428,9 +511,13 @@ dtype: int64</pre>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Preprocessing">Preprocessing<a class="anchor-link" href="#Preprocessing"> </a></h3><p>To prune the list of subreddits, I'll load in the <code>subreddit_info.csv</code> file, join, then choose a certain number of categories (category_1) to filter on.</p>
+<h3 id="Preprocessing">
+<a class="anchor" href="#Preprocessing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preprocessing<a class="anchor-link" href="#Preprocessing"> </a>
+</h3>
+<p>To prune the list of subreddits, I'll load in the <code>subreddit_info.csv</code> file, join, then choose a certain number of categories (category_1) to filter on.</p>
 
 </div>
 </div>
@@ -442,7 +529,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;assets/data/subreddit_info.csv&quot;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subreddit&quot;</span><span class="p">,</span> <span class="s2">&quot;category_1&quot;</span><span class="p">,</span> <span class="s2">&quot;category_2&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"assets/data/subreddit_info.csv"</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s2">"subreddit"</span><span class="p">,</span> <span class="s2">"category_1"</span><span class="p">,</span> <span class="s2">"category_2"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -540,7 +627,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">rspct</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;subreddit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">rspct</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">"subreddit"</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"id"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rspct</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">rspct</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -650,7 +737,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># That&#39;s a good sign</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># That's a good sign</span>
 </pre></div>
 
     </div>
@@ -688,7 +775,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;category_1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span><span class="p">[</span><span class="s2">"category_1"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -761,25 +848,25 @@ Name: category_1, dtype: int64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">keep_cats</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;health&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;profession&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;electronics&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;hobby&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;writing/stories&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;advice/question&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;social_group&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stem&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;parenting&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;books&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;finance/money&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;travel&quot;</span><span class="p">,</span>
+    <span class="s2">"health"</span><span class="p">,</span>
+    <span class="s2">"profession"</span><span class="p">,</span>
+    <span class="s2">"electronics"</span><span class="p">,</span>
+    <span class="s2">"hobby"</span><span class="p">,</span>
+    <span class="s2">"writing/stories"</span><span class="p">,</span>
+    <span class="s2">"advice/question"</span><span class="p">,</span>
+    <span class="s2">"social_group"</span><span class="p">,</span>
+    <span class="s2">"stem"</span><span class="p">,</span>
+    <span class="s2">"parenting"</span><span class="p">,</span>
+    <span class="s2">"books"</span><span class="p">,</span>
+    <span class="s2">"finance/money"</span><span class="p">,</span>
+    <span class="s2">"travel"</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="c1"># Prune dataset to above categories</span>
 <span class="c1"># Overwriting to save memory</span>
-<span class="n">rspct</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;category_1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">keep_cats</span><span class="p">)]</span>
+<span class="n">rspct</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="n">rspct</span><span class="p">[</span><span class="s2">"category_1"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">keep_cats</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rspct</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unique subreddits:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;subreddit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Unique subreddits:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rspct</span><span class="p">[</span><span class="s2">"subreddit"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
 <span class="n">rspct</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -976,10 +1063,10 @@ Unique subreddits: 305
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Concatenate title and selftext</span>
-<span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;selftext&quot;</span><span class="p">]</span>
+<span class="n">rspct</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">"selftext"</span><span class="p">]</span>
 
 <span class="c1"># Drop categories</span>
-<span class="n">rspct</span> <span class="o">=</span> <span class="n">rspct</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;category_1&quot;</span><span class="p">,</span> <span class="s2">&quot;category_2&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;selftext&quot;</span><span class="p">])</span>
+<span class="n">rspct</span> <span class="o">=</span> <span class="n">rspct</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"category_1"</span><span class="p">,</span> <span class="s2">"category_2"</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">,</span> <span class="s2">"selftext"</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -997,7 +1084,7 @@ Unique subreddits: 305
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NOTE: takes a couple minutes to run</span>
-<span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(&lt;lb&gt;)*|(&lt;tab&gt;)*|(&amp;amp;)*|(nbsp;)*&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">rspct</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"(&lt;lb&gt;)*|(&lt;tab&gt;)*|(&amp;amp;)*|(nbsp;)*"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
 <span class="n">rspct</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -1080,7 +1167,7 @@ Unique subreddits: 305
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subreddits</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;subreddit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subreddits</span> <span class="o">=</span> <span class="n">rspct</span><span class="p">[</span><span class="s2">"subreddit"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subreddits</span><span class="p">))</span>
 <span class="n">subreddits</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
 </pre></div>
@@ -1105,18 +1192,18 @@ Unique subreddits: 305
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([&#39;stepparents&#39;, &#39;bigseo&#39;, &#39;chemistry&#39;, &#39;migraine&#39;, &#39;MouseReview&#39;,
-       &#39;Malazan&#39;, &#39;Standup&#39;, &#39;preppers&#39;, &#39;Invisalign&#39;, &#39;whatsthisplant&#39;,
-       &#39;CrohnsDisease&#39;, &#39;KingkillerChronicle&#39;, &#39;OccupationalTherapy&#39;,
-       &#39;churning&#39;, &#39;Libraries&#39;, &#39;acting&#39;, &#39;eczema&#39;, &#39;Allergies&#39;,
-       &#39;bigboobproblems&#39;, &#39;AskAnthropology&#39;, &#39;psychotherapy&#39;,
-       &#39;WayfarersPub&#39;, &#39;synthesizers&#39;, &#39;StopGaming&#39;, &#39;stopsmoking&#39;,
-       &#39;eroticauthors&#39;, &#39;amazonecho&#39;, &#39;TalesFromThePizzaGuy&#39;,
-       &#39;rheumatoid&#39;, &#39;homestead&#39;, &#39;VoiceActing&#39;, &#39;FinancialCareers&#39;,
-       &#39;Sleepparalysis&#39;, &#39;ProtectAndServe&#39;, &#39;short&#39;, &#39;Fibromyalgia&#39;,
-       &#39;teaching&#39;, &#39;PlasticSurgery&#39;, &#39;insomnia&#39;, &#39;PLC&#39;, &#39;rapecounseling&#39;,
-       &#39;peacecorps&#39;, &#39;paintball&#39;, &#39;autism&#39;, &#39;Nanny&#39;, &#39;Plumbing&#39;,
-       &#39;Epilepsy&#39;, &#39;asmr&#39;, &#39;fatpeoplestories&#39;, &#39;Magic&#39;], dtype=object)</pre>
+<pre>array(['stepparents', 'bigseo', 'chemistry', 'migraine', 'MouseReview',
+       'Malazan', 'Standup', 'preppers', 'Invisalign', 'whatsthisplant',
+       'CrohnsDisease', 'KingkillerChronicle', 'OccupationalTherapy',
+       'churning', 'Libraries', 'acting', 'eczema', 'Allergies',
+       'bigboobproblems', 'AskAnthropology', 'psychotherapy',
+       'WayfarersPub', 'synthesizers', 'StopGaming', 'stopsmoking',
+       'eroticauthors', 'amazonecho', 'TalesFromThePizzaGuy',
+       'rheumatoid', 'homestead', 'VoiceActing', 'FinancialCareers',
+       'Sleepparalysis', 'ProtectAndServe', 'short', 'Fibromyalgia',
+       'teaching', 'PlasticSurgery', 'insomnia', 'PLC', 'rapecounseling',
+       'peacecorps', 'paintball', 'autism', 'Nanny', 'Plumbing',
+       'Epilepsy', 'asmr', 'fatpeoplestories', 'Magic'], dtype=object)</pre>
 </div>
 
 </div>
@@ -1134,7 +1221,7 @@ Unique subreddits: 305
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span><span class="p">[</span><span class="s2">&quot;subreddit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rspct</span><span class="p">[</span><span class="s2">"subreddit"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1171,16 +1258,22 @@ Name: subreddit, Length: 305, dtype: int64</pre>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h1 id="Modeling">Modeling<a class="anchor-link" href="#Modeling"> </a></h1>
+<hr>
+<h1 id="Modeling">
+<a class="anchor" href="#Modeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modeling<a class="anchor-link" href="#Modeling"> </a>
+</h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Label-Encoding">Label Encoding<a class="anchor-link" href="#Label-Encoding"> </a></h2>
+<h2 id="Label-Encoding">
+<a class="anchor" href="#Label-Encoding" aria-hidden="true"><span class="octicon octicon-link"></span></a>Label Encoding<a class="anchor-link" href="#Label-Encoding"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -1226,9 +1319,13 @@ Name: subreddit, Length: 305, dtype: int64</pre>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Vectorization">Vectorization<a class="anchor-link" href="#Vectorization"> </a></h2><p>A vectorizer is used to extract numerical features (information) from a corpus of natural language text. I used a <a href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag-of-words</a> method of vectorization, which for the most part, disregards grammar.</p>
+<h2 id="Vectorization">
+<a class="anchor" href="#Vectorization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vectorization<a class="anchor-link" href="#Vectorization"> </a>
+</h2>
+<p>A vectorizer is used to extract numerical features (information) from a corpus of natural language text. I used a <a href="https://en.wikipedia.org/wiki/Bag-of-words_model">bag-of-words</a> method of vectorization, which for the most part, disregards grammar.</p>
 <p>The output of this vectorizer is a document-term matrix, with the documents (observations, or rows) on one axes and the terms (words, bigrams) on the other. This matrix can be thought of as a sort of vocabulary, or text-number translator.</p>
 <p>At first, the "vocabulary" derived from the corpus using the vectorizer was the largest object when serialized. Luckily, there are many options and parameters available to reduce its size, most of which are simply different methods for reducing the number of features (terms) it contains.</p>
 <p>One option is to put a hard limit of 100,000 on the number of features in the vocabulary. This is a simple, naive limit on the generated features, and thus, the resulting vocabulary size.</p>
@@ -1253,9 +1350,9 @@ Name: subreddit, Length: 305, dtype: int64</pre>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
         <span class="n">three_or_below</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
         
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">stop_words</span><span class="p">)</span><span class="si">}</span><span class="s2"> stop words in the list.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">three_or_below</span><span class="p">)</span><span class="si">}</span><span class="s2"> are 4 chars long or shorter.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average length is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">stop_words</span><span class="p">)</span><span class="si">}</span><span class="s2"> stop words in the list."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">three_or_below</span><span class="p">)</span><span class="si">}</span><span class="s2"> are 4 chars long or shorter."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Average length is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1292,7 +1389,7 @@ Average length is: 4.229050279329609.
     <span class="n">max_features</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
     <span class="n">min_df</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-    <span class="n">stop_words</span><span class="o">=</span><span class="n">stop_words</span><span class="p">,</span>  <span class="c1"># Use nltk&#39;s stop words</span>
+    <span class="n">stop_words</span><span class="o">=</span><span class="n">stop_words</span><span class="p">,</span>  <span class="c1"># Use nltk's stop words</span>
 <span class="p">)</span>
 
 <span class="c1"># Fit the vectorizer on the feature column to create vocab (doc-term matrix)</span>
@@ -1329,9 +1426,13 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Feature-Selection">Feature Selection<a class="anchor-link" href="#Feature-Selection"> </a></h2><p>As mentioned previously, the size of the corpus means the dimensionality of the featureset after vectorization will be very high. I passed in 100,000 as the maximum number of features to the vectorizer, limiting the initial size of the vocab. However, the features would have to be reduced more before training the model, as it is generally not good practice to have a larger number of features (100,000) than observations (91,500).</p>
+<h2 id="Feature-Selection">
+<a class="anchor" href="#Feature-Selection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature Selection<a class="anchor-link" href="#Feature-Selection"> </a>
+</h2>
+<p>As mentioned previously, the size of the corpus means the dimensionality of the featureset after vectorization will be very high. I passed in 100,000 as the maximum number of features to the vectorizer, limiting the initial size of the vocab. However, the features would have to be reduced more before training the model, as it is generally not good practice to have a larger number of features (100,000) than observations (91,500).</p>
 <p>To reduce it down from that 100,000, I used a process called select k best, which does exactly what it sounds like: selects a certain number of the best features. The key aspect of this process is how to measure the value of the features; how to find which ones are the "best". The scoring function I used in this case is called <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.chi2.html">ch2</a> (chi-squared).</p>
 <p>This function calculates chi-squared statistics between each feature and the target, measuring the dependence, or correlation, between them. The intuition here is that features which are more correlated with the target are more likely to be useful to the model.</p>
 <p>I played around with some different values for the maximum number of features to be selected. Ultimately, I was once again limited by the size of the free Heroku Dyno, and settled on 20,000. This allowed the deployment to go smoothly while retaining enough information for the model to have adequate performance.</p>
@@ -1380,18 +1481,26 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-validation">Model validation<a class="anchor-link" href="#Model-validation"> </a></h2><p>In this case, the model has a target that it is attempting to predict—a supervised problem. Therefore, the performance can be measured on validation and test sets.</p>
+<h2 id="Model-validation">
+<a class="anchor" href="#Model-validation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model validation<a class="anchor-link" href="#Model-validation"> </a>
+</h2>
+<p>In this case, the model has a target that it is attempting to predict—a supervised problem. Therefore, the performance can be measured on validation and test sets.</p>
 <p>To test out the recommendations I copied some posts and put them through the prediction pipeline to see what kinds of subreddits were getting recommended. For the most part, the predictions were decent.</p>
 <p>The cases where the recommendations were a little less than ideal happened when I pulled example posts from subreddits that were not in the training data. The model generally did a good job recommending similar subreddits.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Baseline">Baseline<a class="anchor-link" href="#Baseline"> </a></h3><p>For the baseline model, I decided to go with a basic random forest. This choice was somewhat arbitrary, though I was curious to see how a random forest would do with such a high target cardinality (number of classes/categories).</p>
+<h3 id="Baseline">
+<a class="anchor" href="#Baseline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Baseline<a class="anchor-link" href="#Baseline"> </a>
+</h3>
+<p>For the baseline model, I decided to go with a basic random forest. This choice was somewhat arbitrary, though I was curious to see how a random forest would do with such a high target cardinality (number of classes/categories).</p>
 <p>The baseline precision-at-k metrics for the random forest on the validation set were .54, .63, and .65, for <code>k</code> of 1, 3, and 5, respectively.</p>
 
 </div>
@@ -1498,10 +1607,10 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation scores:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@1 =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_val</span> <span class="o">==</span> <span class="n">y_pred_rfc</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@3 =&quot;</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_rfc</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@5 =&quot;</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_rfc</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Validation scores:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@1 ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_val</span> <span class="o">==</span> <span class="n">y_pred_rfc</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@3 ="</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_rfc</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@5 ="</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_rfc</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1528,9 +1637,13 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Multinomial-Naive-Bayes">Multinomial Naive Bayes<a class="anchor-link" href="#Multinomial-Naive-Bayes"> </a></h3><p>Multinomial naive Bayes is a probabilistic learning method for multinomially distributed data, and one of two classic naive Bayes algorithms used for text classification. I decided to iterate with this algorithm because it is meant for text classification tasks.</p>
+<h3 id="Multinomial-Naive-Bayes">
+<a class="anchor" href="#Multinomial-Naive-Bayes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multinomial Naive Bayes<a class="anchor-link" href="#Multinomial-Naive-Bayes"> </a>
+</h3>
+<p>Multinomial naive Bayes is a probabilistic learning method for multinomially distributed data, and one of two classic naive Bayes algorithms used for text classification. I decided to iterate with this algorithm because it is meant for text classification tasks.</p>
 <p>The precision-at-k metrics for the final Multinomial naive Bayes model on the validation set were .76, .88, and .9188, for <code>k</code> of 1, 3, and 5, respectively. Performance on the test set was nearly identical: .75, .88, and .9159.</p>
 
 </div>
@@ -1570,9 +1683,12 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Evaluate-on-validation-set">Evaluate on validation set<a class="anchor-link" href="#Evaluate-on-validation-set"> </a></h3>
+<h3 id="Evaluate-on-validation-set">
+<a class="anchor" href="#Evaluate-on-validation-set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evaluate on validation set<a class="anchor-link" href="#Evaluate-on-validation-set"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -1620,10 +1736,10 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation scores:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@1 =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_val</span> <span class="o">==</span> <span class="n">y_pred_val</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@3 =&quot;</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_val</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@5 =&quot;</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_val</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Validation scores:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@1 ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_val</span> <span class="o">==</span> <span class="n">y_pred_val</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@3 ="</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_val</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@5 ="</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred_proba_val</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1650,9 +1766,12 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Evaluate-on-test-set">Evaluate on test set<a class="anchor-link" href="#Evaluate-on-test-set"> </a></h3>
+<h3 id="Evaluate-on-test-set">
+<a class="anchor" href="#Evaluate-on-test-set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evaluate on test set<a class="anchor-link" href="#Evaluate-on-test-set"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -1700,10 +1819,10 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test scores:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@1 =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_test</span> <span class="o">==</span> <span class="n">y_pred_test</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@3 =&quot;</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_proba_test</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  precision@5 =&quot;</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_proba_test</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Test scores:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@1 ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_test</span> <span class="o">==</span> <span class="n">y_pred_test</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@3 ="</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_proba_test</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"  precision@5 ="</span><span class="p">,</span> <span class="n">precision_at_k</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_proba_test</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1730,9 +1849,13 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Recommendations">Recommendations<a class="anchor-link" href="#Recommendations"> </a></h2><p>The API should return a list of recommendations, not a single prediction. To accomplish this, I wrote a function that returns the top 5 most likely subreddits and their respective probabilities.</p>
+<h2 id="Recommendations">
+<a class="anchor" href="#Recommendations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recommendations<a class="anchor-link" href="#Recommendations"> </a>
+</h2>
+<p>The API should return a list of recommendations, not a single prediction. To accomplish this, I wrote a function that returns the top 5 most likely subreddits and their respective probabilities.</p>
 
 </div>
 </div>
@@ -1746,7 +1869,7 @@ Average length is: 4.229050279329609.
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The main functionality of the predict API endpoint</span>
 <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">submission_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">return_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Serve subreddit predictions.</span>
+    <span class="sd">"""Serve subreddit predictions.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1760,10 +1883,10 @@ Average length is: 4.229050279329609.
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    Python dictionary formatted as follows:</span>
-<span class="sd">        [{&#39;subreddit&#39;: &#39;PLC&#39;, &#39;proba&#39;: 0.014454},</span>
+<span class="sd">        [{'subreddit': 'PLC', 'proba': 0.014454},</span>
 <span class="sd">         ...</span>
-<span class="sd">         {&#39;subreddit&#39;: &#39;Rowing&#39;, &#39;proba&#39;: 0.005206}]</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">         {'subreddit': 'Rowing', 'proba': 0.005206}]</span>
+<span class="sd">    """</span>
     <span class="c1"># Concatenate title and post text</span>
     <span class="n">fulltext</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">submission_text</span><span class="p">)</span>
     <span class="c1"># Vectorize the post -&gt; sparse doc-term matrix</span>
@@ -1777,12 +1900,12 @@ Average length is: 4.229050279329609.
                 <span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">proba</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">])</span>  <span class="c1"># Classes as column names</span>
                 <span class="o">.</span><span class="n">T</span>  <span class="c1"># Transpose so column names become index</span>
                 <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>  <span class="c1"># Pull out index into a column</span>
-                <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;level_0&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;proba&quot;</span><span class="p">})</span>  <span class="c1"># Rename for aesthetics</span>
-                <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;proba&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Sort by probability</span>
+                <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"level_0"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s2">"proba"</span><span class="p">})</span>  <span class="c1"># Rename for aesthetics</span>
+                <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"proba"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Sort by probability</span>
                 <span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">return_count</span><span class="p">]</span>  <span class="c1"># n-top predictions to serve</span>
-                <span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">)</span>
                <span class="p">)</span>
-    <span class="n">proba_json</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;predictions&quot;</span><span class="p">:</span> <span class="n">proba_dict</span><span class="p">}</span>
+    <span class="n">proba_json</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"predictions"</span><span class="p">:</span> <span class="n">proba_dict</span><span class="p">}</span>
     
     <span class="k">return</span> <span class="n">proba_json</span>
 </pre></div>
@@ -1801,11 +1924,11 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_science</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Is there an evolutionary benefit to eating spicy food that lead to consumption across numerous cultures throughout history? Or do humans just like the sensation?&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_science</span> <span class="o">=</span> <span class="s2">"""Is there an evolutionary benefit to eating spicy food that lead to consumption across numerous cultures throughout history? Or do humans just like the sensation?"""</span>
 
-<span class="n">post_science</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;I love spicy food and have done ever since I tried it. By spicy I mean HOT, like chilli peppers (we say spicy in England, I don&#39;t mean to state the obvious I&#39;m just not sure if that&#39;s a global term and I&#39;ve assumed too much before). I love a vast array of spicy foods from all around the world. I was just wondering if there was some evolutionary basis as to why spicy food managed to become some widely consumed historically. Though there seem to</span>
+<span class="n">post_science</span> <span class="o">=</span> <span class="s2">"""I love spicy food and have done ever since I tried it. By spicy I mean HOT, like chilli peppers (we say spicy in England, I don't mean to state the obvious I'm just not sure if that's a global term and I've assumed too much before). I love a vast array of spicy foods from all around the world. I was just wondering if there was some evolutionary basis as to why spicy food managed to become some widely consumed historically. Though there seem to</span>
 
-<span class="s2">It way well be that we just like a tingly mouth, the simple things in life.&quot;&quot;&quot;</span>
+<span class="s2">It way well be that we just like a tingly mouth, the simple things in life."""</span>
 
 <span class="n">science_recs</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">title_science</span><span class="p">,</span> <span class="n">post_science</span><span class="p">)</span>
 <span class="n">science_recs</span>
@@ -1823,11 +1946,11 @@ Average length is: 4.229050279329609.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;predictions&#39;: [{&#39;name&#39;: &#39;GERD&#39;, &#39;proba&#39;: 0.009900622287634142},
-  {&#39;name&#39;: &#39;Allergies&#39;, &#39;proba&#39;: 0.009287774623361566},
-  {&#39;name&#39;: &#39;ibs&#39;, &#39;proba&#39;: 0.009150308633162811},
-  {&#39;name&#39;: &#39;AskAnthropology&#39;, &#39;proba&#39;: 0.009028660140513678},
-  {&#39;name&#39;: &#39;fatpeoplestories&#39;, &#39;proba&#39;: 0.00851982441049019}]}</pre>
+<pre>{'predictions': [{'name': 'GERD', 'proba': 0.009900622287634142},
+  {'name': 'Allergies', 'proba': 0.009287774623361566},
+  {'name': 'ibs', 'proba': 0.009150308633162811},
+  {'name': 'AskAnthropology', 'proba': 0.009028660140513678},
+  {'name': 'fatpeoplestories', 'proba': 0.00851982441049019}]}</pre>
 </div>
 
 </div>
@@ -1845,9 +1968,9 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_pc</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Looking for help with a build&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_pc</span> <span class="o">=</span> <span class="s2">"""Looking for help with a build"""</span>
 
-<span class="n">post_pc</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;I posted my wants for my build about 2 months ago. Ordered them and when I went to build it I was soooooo lost. It took 3 days to put things together because I was afraid I would break something when I finally got the parts together it wouldn’t start, I was so defeated. With virtually replacing everything yesterday it finally booted and I couldn’t be more excited!&quot;&quot;&quot;</span>
+<span class="n">post_pc</span> <span class="o">=</span> <span class="s2">"""I posted my wants for my build about 2 months ago. Ordered them and when I went to build it I was soooooo lost. It took 3 days to put things together because I was afraid I would break something when I finally got the parts together it wouldn’t start, I was so defeated. With virtually replacing everything yesterday it finally booted and I couldn’t be more excited!"""</span>
 
 <span class="n">post_pc_recs</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">title_pc</span><span class="p">,</span> <span class="n">post_pc</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">post_pc_recs</span>
@@ -1865,16 +1988,16 @@ Average length is: 4.229050279329609.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;predictions&#39;: [{&#39;name&#39;: &#39;lego&#39;, &#39;proba&#39;: 0.008418484170536294},
-  {&#39;name&#39;: &#39;rccars&#39;, &#39;proba&#39;: 0.008112076951648648},
-  {&#39;name&#39;: &#39;MechanicalKeyboards&#39;, &#39;proba&#39;: 0.0078335440606017},
-  {&#39;name&#39;: &#39;fightsticks&#39;, &#39;proba&#39;: 0.007633958584830632},
-  {&#39;name&#39;: &#39;Luthier&#39;, &#39;proba&#39;: 0.00716176615193545},
-  {&#39;name&#39;: &#39;modeltrains&#39;, &#39;proba&#39;: 0.007088134228361153},
-  {&#39;name&#39;: &#39;cade&#39;, &#39;proba&#39;: 0.007058109839673285},
-  {&#39;name&#39;: &#39;vandwellers&#39;, &#39;proba&#39;: 0.006700262151491209},
-  {&#39;name&#39;: &#39;cosplay&#39;, &#39;proba&#39;: 0.006536648725434882},
-  {&#39;name&#39;: &#39;homestead&#39;, &#39;proba&#39;: 0.006166832450007183}]}</pre>
+<pre>{'predictions': [{'name': 'lego', 'proba': 0.008418484170536294},
+  {'name': 'rccars', 'proba': 0.008112076951648648},
+  {'name': 'MechanicalKeyboards', 'proba': 0.0078335440606017},
+  {'name': 'fightsticks', 'proba': 0.007633958584830632},
+  {'name': 'Luthier', 'proba': 0.00716176615193545},
+  {'name': 'modeltrains', 'proba': 0.007088134228361153},
+  {'name': 'cade', 'proba': 0.007058109839673285},
+  {'name': 'vandwellers', 'proba': 0.006700262151491209},
+  {'name': 'cosplay', 'proba': 0.006536648725434882},
+  {'name': 'homestead', 'proba': 0.006166832450007183}]}</pre>
 </div>
 
 </div>
@@ -1892,13 +2015,13 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_title</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;What to do about java vs javascript&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">post_title</span> <span class="o">=</span> <span class="s2">"""What to do about java vs javascript"""</span>
 
-<span class="n">post</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;I am a new grad looking for a job and currently in the process with a company for a junior backend engineer role. I was under the impression that the position was Javascript but instead it is actually Java. My general programming and &quot;leet code&quot; skills are pretty good, but my understanding of Java is pretty shallow. How can I use the next three days to best improve my general Java knowledge? Most resources on the web seem to be targeting complete beginners. Maybe a book I can skim through in the next few days?</span>
+<span class="n">post</span> <span class="o">=</span> <span class="s2">"""I am a new grad looking for a job and currently in the process with a company for a junior backend engineer role. I was under the impression that the position was Javascript but instead it is actually Java. My general programming and "leet code" skills are pretty good, but my understanding of Java is pretty shallow. How can I use the next three days to best improve my general Java knowledge? Most resources on the web seem to be targeting complete beginners. Maybe a book I can skim through in the next few days?</span>
 
 <span class="s2">Edit:</span>
 
-<span class="s2">A lot of people are saying &quot;the company is a sinking ship don&#39;t even go to the interview&quot;. I just want to add that the position was always for a &quot;junior backend engineer&quot;. This company uses multiple languages and the recruiter just told me the incorrect language for the specific team I&#39;m interviewing for. I&#39;m sure they&#39;re mainly interested in seeing my understanding of good backend principles and software design, it&#39;s not a senior lead Java position.&quot;&quot;&quot;</span>
+<span class="s2">A lot of people are saying "the company is a sinking ship don't even go to the interview". I just want to add that the position was always for a "junior backend engineer". This company uses multiple languages and the recruiter just told me the incorrect language for the specific team I'm interviewing for. I'm sure they're mainly interested in seeing my understanding of good backend principles and software design, it's not a senior lead Java position."""</span>
 
 <span class="c1"># === Test out the function === #</span>
 <span class="n">post_pred</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">post_title</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>  <span class="c1"># Default is 5 results</span>
@@ -1917,11 +2040,11 @@ Average length is: 4.229050279329609.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;predictions&#39;: [{&#39;name&#39;: &#39;cscareerquestions&#39;, &#39;proba&#39;: 0.516989539243874},
-  {&#39;name&#39;: &#39;devops&#39;, &#39;proba&#39;: 0.031462691062989795},
-  {&#39;name&#39;: &#39;interviews&#39;, &#39;proba&#39;: 0.02846504725703069},
-  {&#39;name&#39;: &#39;datascience&#39;, &#39;proba&#39;: 0.024227300545057697},
-  {&#39;name&#39;: &#39;bioinformatics&#39;, &#39;proba&#39;: 0.017516176338177075}]}</pre>
+<pre>{'predictions': [{'name': 'cscareerquestions', 'proba': 0.516989539243874},
+  {'name': 'devops', 'proba': 0.031462691062989795},
+  {'name': 'interviews', 'proba': 0.02846504725703069},
+  {'name': 'datascience', 'proba': 0.024227300545057697},
+  {'name': 'bioinformatics', 'proba': 0.017516176338177075}]}</pre>
 </div>
 
 </div>
@@ -1939,10 +2062,10 @@ Average length is: 4.229050279329609.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_book</span> <span class="o">=</span> <span class="s2">&quot;Looking for books with great plot twists&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_book</span> <span class="o">=</span> <span class="s2">"Looking for books with great plot twists"</span>
 
 <span class="c1"># This one comes from r/suggestmeabook</span>
-<span class="n">post2</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;I&#39;ve been dreaming about writing my own stort story for a while but I want to give it an unexpected ending. I&#39;ve read lots of books, but none of them had the plot twist I want. I want to read books with the best plot twists, so that I can analyze what makes a good plot twist and write my own story based on that points. I don&#39;t like romance novels and I mostly enjoy sci-fi or historical books but anything beside romance novels would work for me, it doesn&#39;t have to be my type of novel. I&#39;m open to experience after all. I need your help guys. Thanks in advance.&quot;&quot;&quot;</span>
+<span class="n">post2</span> <span class="o">=</span> <span class="s2">"""I've been dreaming about writing my own stort story for a while but I want to give it an unexpected ending. I've read lots of books, but none of them had the plot twist I want. I want to read books with the best plot twists, so that I can analyze what makes a good plot twist and write my own story based on that points. I don't like romance novels and I mostly enjoy sci-fi or historical books but anything beside romance novels would work for me, it doesn't have to be my type of novel. I'm open to experience after all. I need your help guys. Thanks in advance."""</span>
 
 <span class="c1"># === This time with 10 results === #</span>
 <span class="n">post2_pred</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">title_book</span><span class="p">,</span> <span class="n">post2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1961,16 +2084,16 @@ Average length is: 4.229050279329609.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;predictions&#39;: [{&#39;name&#39;: &#39;suggestmeabook&#39;, &#39;proba&#39;: 0.4070015062748489},
-  {&#39;name&#39;: &#39;writing&#39;, &#39;proba&#39;: 0.14985778378113648},
-  {&#39;name&#39;: &#39;eroticauthors&#39;, &#39;proba&#39;: 0.07159411817054702},
-  {&#39;name&#39;: &#39;whatsthatbook&#39;, &#39;proba&#39;: 0.06062653422250441},
-  {&#39;name&#39;: &#39;ComicBookCollabs&#39;, &#39;proba&#39;: 0.027277418056905547},
-  {&#39;name&#39;: &#39;Malazan&#39;, &#39;proba&#39;: 0.019514923212723943},
-  {&#39;name&#39;: &#39;TheDarkTower&#39;, &#39;proba&#39;: 0.017162701613834493},
-  {&#39;name&#39;: &#39;DestructiveReaders&#39;, &#39;proba&#39;: 0.0151031907793204},
-  {&#39;name&#39;: &#39;WoT&#39;, &#39;proba&#39;: 0.011165890302931272},
-  {&#39;name&#39;: &#39;readyplayerone&#39;, &#39;proba&#39;: 0.007566597361383115}]}</pre>
+<pre>{'predictions': [{'name': 'suggestmeabook', 'proba': 0.4070015062748489},
+  {'name': 'writing', 'proba': 0.14985778378113648},
+  {'name': 'eroticauthors', 'proba': 0.07159411817054702},
+  {'name': 'whatsthatbook', 'proba': 0.06062653422250441},
+  {'name': 'ComicBookCollabs', 'proba': 0.027277418056905547},
+  {'name': 'Malazan', 'proba': 0.019514923212723943},
+  {'name': 'TheDarkTower', 'proba': 0.017162701613834493},
+  {'name': 'DestructiveReaders', 'proba': 0.0151031907793204},
+  {'name': 'WoT', 'proba': 0.011165890302931272},
+  {'name': 'readyplayerone', 'proba': 0.007566597361383115}]}</pre>
 </div>
 
 </div>
@@ -1981,18 +2104,26 @@ Average length is: 4.229050279329609.
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-deployment">Model deployment<a class="anchor-link" href="#Model-deployment"> </a></h2><p>As mentioned, the model, vocab, and feature selector were all serialized using Python's pickle module. In the Flask app, the pickled objects are loaded and ready for use, just like that.</p>
+<h2 id="Model-deployment">
+<a class="anchor" href="#Model-deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model deployment<a class="anchor-link" href="#Model-deployment"> </a>
+</h2>
+<p>As mentioned, the model, vocab, and feature selector were all serialized using Python's pickle module. In the Flask app, the pickled objects are loaded and ready for use, just like that.</p>
 <p>I will go over the details of how the Flask app was set up in a separate blog post.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
-<h1 id="Final-Thoughts">Final Thoughts<a class="anchor-link" href="#Final-Thoughts"> </a></h1><p>For me, the most important and valuable aspects of this project were mainly surrounding the challenge of scope management. I constantly had to ask myself, "What is the best version of this I can create given our limitations?"</p>
+<hr>
+<h1 id="Final-Thoughts">
+<a class="anchor" href="#Final-Thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Thoughts<a class="anchor-link" href="#Final-Thoughts"> </a>
+</h1>
+<p>For me, the most important and valuable aspects of this project were mainly surrounding the challenge of scope management. I constantly had to ask myself, "What is the best version of this I can create given our limitations?"</p>
 <p>At first, I thought it would be feasible to predict all of the 1,000+ subreddits in the data, and wasted hours of valuable time attempting to do so. While I had tested various strategies of reducing the complexity of the model, the performance was rather terrible when it was trained on 100 or less examples of each of the complete list of subreddits.</p>
 <p>The data scientist who I primarily worked with (we had one data scientist in addition to him and one other machine learning engineer, both of whom did not contribute significantly to the project) kept telling me that I should try reducing the number of classes first, allowing for more examples of each class and fewer classes for the model to predict.</p>
 <p>Ultimately, this is the strategy that worked best, and I wasted valuable time by not listening to him the first few times he recommended that strategy. Good teamwork requires the members being humble and listening, something that I have taken to heart since the conclusion of this project.</p>
@@ -2000,9 +2131,13 @@ Average length is: 4.229050279329609.
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scope-Management,-Revisited">Scope Management, Revisited<a class="anchor-link" href="#Scope-Management,-Revisited"> </a></h2><p>As time was very short while building this initial recommendation API, there are many things that we wished we could have done but simply did not have the time. Here are a few of the more obvious improvements that could be made.</p>
+<h2 id="Scope-Management,-Revisited">
+<a class="anchor" href="#Scope-Management,-Revisited" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scope Management, Revisited<a class="anchor-link" href="#Scope-Management,-Revisited"> </a>
+</h2>
+<p>As time was very short while building this initial recommendation API, there are many things that we wished we could have done but simply did not have the time. Here are a few of the more obvious improvements that could be made.</p>
 <p>The first, and most obvious one, is to simply deploy to a more powerful server, such as one hosted on AWS Elastic Beanstalk or EC2. This way, we could use the entire dataset to train an optimal model without worrying (as much) about memory limits.</p>
 <p>Second, I could use a Scikit-learn pipeline to validate and tune hyperparameters using cross-validation, instead of a separate validation set. Also, this pipeline could be serialized as a single large object, rather than as separate pieces (encoder, vectorizer, feature selector, and classifier). As a final note for this particular train of thought, <a href="https://joblib.readthedocs.io/en/latest/">Joblib</a> could potentially provide more efficient serialization than the Pickle module, allowing a more complex pipeline to be deployed on the same server.</p>
 <p>Third, a model could've been trained to classify the input post first into a broad category. Then, some sort of model could be used to to classify into a specific subreddit within that broad category. I'm not sure about the feasibility of the second part of this idea, but thought it could be an interesting one to explore.</p>
@@ -2017,7 +2152,7 @@ Average length is: 4.229050279329609.
 
 
 
-  </div><a class="u-url" href="/fastfyi/2020/01/12/post-here.html" hidden></a>
+  </div><a class="u-url" href="/fastfyi/workshop/2020/01/12/post-here.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
