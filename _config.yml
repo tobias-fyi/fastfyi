@@ -36,6 +36,9 @@ url: "https://tobias-fyi.github.io" # the base hostname & protocol for your site
 #
 baseurl: "/fastfyi" # the subpath of your site, e.g. "/blog".
 
+# Permalinks
+permalink: /:categories/:title
+
 # Github and twitter are optional:
 minima:
   social_links:
