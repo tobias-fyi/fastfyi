@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Trash Panda | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Trash Panda" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Worked for 8 weeks as a machine learning engineer on a remote interdisciplinary team; helped gather and label over 80,000 images to train an object detection model; built a Flask API to deploy model." />
+<meta property="og:description" content="Worked for 8 weeks as a machine learning engineer on a remote interdisciplinary team; helped gather and label over 80,000 images to train an object detection model; built a Flask API to deploy model." />
+<link rel="canonical" href="https://tobias-fyi.github.io/fastfyi/workshop/trash-panda" />
+<meta property="og:url" content="https://tobias-fyi.github.io/fastfyi/workshop/trash-panda" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:image" content="https://tobias-fyi.github.io/fastfyi/images/trash-panda-icon.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-08T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://tobias-fyi.github.io/fastfyi/workshop/trash-panda","@type":"BlogPosting","headline":"Trash Panda","dateModified":"2020-03-08T00:00:00-06:00","datePublished":"2020-03-08T00:00:00-06:00","image":"https://tobias-fyi.github.io/fastfyi/images/trash-panda-icon.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tobias-fyi.github.io/fastfyi/workshop/trash-panda"},"description":"Worked for 8 weeks as a machine learning engineer on a remote interdisciplinary team; helped gather and label over 80,000 images to train an object detection model; built a Flask API to deploy model.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastfyi/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://tobias-fyi.github.io/fastfyi/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastfyi/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastfyi/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastfyi/about/">About Me</a><a class="page-link" href="/fastfyi/search/">Search</a><a class="page-link" href="/fastfyi/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Trash Panda</h1><p class="page-description">Worked for 8 weeks as a machine learning engineer on a remote interdisciplinary team; helped gather and label over 80,000 images to train an object detection model; built a Flask API to deploy model.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-03-08T00:00:00-06:00" itemprop="datePublished">
+        Mar 8, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      30 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastfyi/categories/#workshop">workshop</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/tobias-fyi/fastfyi/tree/master/_notebooks/2020-03-08-trash-panda.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastfyi/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/tobias-fyi/fastfyi/master?filepath=_notebooks%2F2020-03-08-trash-panda.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastfyi/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/tobias-fyi/fastfyi/blob/master/_notebooks/2020-03-08-trash-panda.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastfyi/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#The-Problem">The Problem </a></li>
+<li class="toc-entry toc-h3"><a href="#The-Solution">The Solution </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#A-note-on-PWAs">A note on PWAs </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#The-Team-(and-My-Role-On-It)">The Team (and My Role On It) </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#The-Data">The Data </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Classifications">Classifications </a></li>
+<li class="toc-entry toc-h3"><a href="#Image-Data-Pipelines">Image Data Pipelines </a></li>
+<li class="toc-entry toc-h3"><a href="#Gather">Gather </a></li>
+<li class="toc-entry toc-h3"><a href="#Annotate">Annotate </a></li>
+<li class="toc-entry toc-h3"><a href="#Automated-Background-Removal">Automated Background Removal </a></li>
+<li class="toc-entry toc-h3"><a href="#Running-the-Pipeline">Running the Pipeline </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#The-Model">The Model </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Architecture">Architecture </a></li>
+<li class="toc-entry toc-h3"><a href="#Training">Training </a></li>
+<li class="toc-entry toc-h3"><a href="#Deployment">Deployment </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Final-Thoughts">Final Thoughts </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Potential-Improvements">Potential Improvements </a></li>
+<li class="toc-entry toc-h3"><a href="#Team-Links">Team Links </a></li>
+<li class="toc-entry toc-h3"><a href="#Other-Links">Other Links </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-03-08-trash-panda.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Introduction">
+<a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Problem">
+<a class="anchor" href="#The-Problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Problem<a class="anchor-link" href="#The-Problem"> </a>
+</h3>
+<p>You have an object in your hand that you intend to throw away. When you think about it as you're walking to the bins, you realize you actually don't know whether this type of object is recyclable or not. Maybe it is made of multiple different materials, or of an uncommon or unrecognizable material.</p>
+<p>You're in the middle of an important project, and it's crunch time—no extra time available to spend researching. You end up throwing it in the recycling because it...well, it <em>seems</em> like something that would be recyclable. With the decision made and action taken, you return to your important project, forgetting all about what just transpired.</p>
+<p>I'd bet that most who are reading this have had an experience like this.</p>
+<p>The priceless time and energy spent researching how to properly dispose of every single item can add up. However, the US is in something of a recycling crisis at the moment, partially due to the low quality of our recyclable waste—it tends to be very intermixed with non-recyclables.</p>
+<p>Ever since China's <a href="https://99percentinvisible.org/episode/national-sword/">National Sword</a> legislation in 2017, which vastly reduced the amount of foreign recycling—particularly low-quality—the country would accept, recycling companies in the US have been forced to grapple with this quality issue. The cost of recycling increases when more trash is intermingled with it, as more sorting has to occur prior to processing. Whether it is more expensive machines or higher cost of labor, sorting costs money.</p>
+<p>While the domestic recycling infrastructure will (hopefully) grow to meet the increasing demand, the best way to solve a problem is to address the source of the issue, not the symptoms. One key reason for the low quality recycling is simply a lack of easily accessible information. Even with the power of modern search engines at our fingertips, finding relevant recycling information can take a long time, as what exactly constitutes recycling changes depending on area and company.</p>
+<p>The simple fact is that most people don't want to spend the additional time it takes (at least up front) to have good recycling habits. So why not simply remove that additional time from the equation?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/trash-panda-playstore.png" alt="Trash Panda: recycling made easy (with computer vision)." title="Trash Panda: recycling made easy with computer vision."></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Solution">
+<a class="anchor" href="#The-Solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Solution<a class="anchor-link" href="#The-Solution"> </a>
+</h3>
+<p>The goal was to build an app that helps to foster better recycling habits by reducing the the effort needed to find accurate and relevant information on how to properly dispose of any given item of waste. To make this possible, we needed to reduce the friction so much so that looking up how to dispose of something that a user is holding in their hand is just as quick and easy as debating for a few moments on what bin it goes in.</p>
+<p>Put another way, our goal was to reduce the cognitive tax of getting relevant recycling information so much that disposing of every item of waste properly, regardless of what it is, becomes effortless.</p>
+<p>Our stakeholder envisioned that the user would simply snap a photo of something they are about to toss. Then, the app's computer vision (object detection) functionality would recognize the object and automatically pull up the relevant information on how it should be disposed of according to the user's location and available services. The user would know immediately if the item should be thrown in the trash, recycle, or compost, or if it is recyclable only at an offsite facility. For the latter case, the user would be able to view a list of nearby facilities that accept the item or material.</p>
+<p>The result of this vision is a progressive web app (PWA) called Trash Panda, which does just that. You can try out the app on your mobile device now by following the link below.</p>
+<blockquote>
+<p><a href="https://thetrashpanda.com/">The Trash Panda app (meant for mobile)</a></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="A-note-on-PWAs">
+<a class="anchor" href="#A-note-on-PWAs" aria-hidden="true"><span class="octicon octicon-link"></span></a>A note on PWAs<a class="anchor-link" href="#A-note-on-PWAs"> </a>
+</h4>
+<p>For those who aren't familiar, a PWA is basically a web app that can both be used via the browser and downloaded to the home screen of a mobile device. Google has been moving to fully support PWAs, meaning Trash Panda is available on the Play Store right now. Of course the benefit of a PWA is you don't actually have to download it at all if you don't want to. You can use it directly from the browser.</p>
+<p>Apple is pretty far behind in their support of PWAs. As a result, the behavior on an iOS device is not ideal. For those on iOS, be sure to use Safari. And when taking a picture of an item, you have to exit out of the video window before pressing the normal shutter button.</p>
+<p>You'll figure it out—we believe in you!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Team-(and-My-Role-On-It)">
+<a class="anchor" href="#The-Team-(and-My-Role-On-It)" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Team (and My Role On It)<a class="anchor-link" href="#The-Team-(and-My-Role-On-It)"> </a>
+</h3>
+<p>For eight weeks near the beginning of 2020, I worked with a remote interdisciplinary team to bring the vision of Trash Panda to life.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/trash-panda-team.png" alt="The Trash Panda Team" title="The Trash Panda Team"></p>
+<p>Trash Panda is by far the most ambitious machine learning endeavor I had yet embarked on. Indeed, it was the largest software project I'd worked on in just about every respect: time, team, ambition, breadth of required knowledge. As such, it provided to me many valuable, foundational experiences that I'll surely keep with me throughout my entire career.</p>
+<p>I seriously lucked out on the team for this project. Every single one of them was hard-working, thoughtful, friendly—a pleasure to work with. <a href="https://thetrashpanda.com/splash/team">The team</a> included myself and three other machine learning engineers, four web developers, and two UX designers (links to all of their respective sites in the Final Thoughts section below). Our stakeholder Trevor Clack, who came up with the idea for the app and <a href="https://youtu.be/oVh8fccQHZQ">pitched it</a> to Labs, also worked on the project as a machine learning engineer.</p>
+<blockquote>
+<p><a href="https://tclack88.github.io/blog/personal/2020/03/07/trash-panda.html">Trevor's Trash Panda blog post</a>
+We all pushed ourselves throughout each and every day of the eight weeks to make Trevor's vision come to life, learning entirely new technologies, frameworks, skills, and processes along the way.</p>
+</blockquote>
+<p>For example, the web developers taught themselves how to use GraphQL, along with a variety of related/dependent technology. On the machine learning side of things, none of us had significant applied experience with computer vision (CV) going into the project. We'd spent a few days studying and working with it in the Deep Learning unit of our Lambda School curriculum. But that was more to expose us to it, rather than covering the entire process in-depth. We had only the shallowest of surface scratches compared to what was ultimately needed to meet the vision set out for us.</p>
+<p>As the machine learning engineers on the team, we were responsible for the entire process of getting an object detection system built, trained, deployed, and integrated with the app. Basically, we were starting from scratch, both in the sense of a greenfield project and of us being inexperienced with CV.</p>
+<p>Of course, CV is still machine learning—many steps in the process are similar to any other supervised machine learning project. But working with images comes with its own suite of unique challenges that we had to learn how to overcome.</p>
+<p>We split up the work as evenly as possible, given our initially limited knowledge of the details, with some steps being split up between some or all of us, and other steps having a sole owner.</p>
+<p>The first step for which I was solely responsible included building a system to automatically remove the background from images (or extract the foreground, depending on how you look at it). Essentially, when tasked with figuring out a way to automate the process of removing the background from images so they could be auto-labeled via a script written by Trevor, I built a secondary pipeline with a pre-trained image segmentation model. More details can be found in the Automated Background Removal section below.</p>
+<p>Furthermore, I was responsible for building and deploying the object detection API. I built the API using Flask, containerized it with Docker, and deployed it to AWS Elastic Beanstalk. I go into a little more detail in the Deployment section below, though I will be digging into the code and process of the API much more in a separate blog post.</p>
+<p>All members of the machine learning team contributed to the gathering and labeling of the dataset. To this end, each of us ended up gathering and labeling somewhere in the range of 20,000 images, for a total of over 82,000.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="The-Data">
+<a class="anchor" href="#The-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Data<a class="anchor-link" href="#The-Data"> </a>
+</h2>
+<p>As is the case with most, if not all, machine learning projects, we spent the vast majority of the time gathering and labeling our dataset. Before we could get into gathering the actual data, however, we needed to define what data we needed to gather and how we were going to gather it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Classifications">
+<a class="anchor" href="#Classifications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classifications<a class="anchor-link" href="#Classifications"> </a>
+</h3>
+<p>As also seems to be the case with most, if not all, projects in general, we were almost constantly grappling with scope management. In an ideal world, our model would be able to recognize any object that anyone would ever want to throw away. But in reality is this is practically impossible, particularly within the 8 weeks we had to work on Trash Panda. I say "practically" because I'm sure if a company dedicated enough resources to the problem, eventually it could be solved, at least to some degree.</p>
+<p>Fortunately, we were granted an API key from <a href="https://earth911.com/">Earth911</a> (shoutout to them for helping out!) to utilize their <a href="https://search.earth911.com/">recycling center search database</a>. At the time we were working with it, the database held information on around 300 items—how they should be recycled based on location, and facilities that accept them if they are not curbside recyclable. They added a number of items when we were already most of the way done with the project, and have likely added more since then.</p>
+<p>We had our starting point for the list of items our system should be able to recognize. However, the documentation for the neural network architecture we'd decided to use suggested that to create a robust model, it should be trained with at least 1,000 instances (in this case, images) of each of the classes we wanted it to detect.</p>
+<p>Gathering 300,000 images was also quite a bit out of the scope of the project at that point. So, the DS team spent many hours reducing the size of that list to something a little more manageable and realistic.</p>
+<p>The main method of doing so was to group the items based primarily on visual similarity. We knew it was also out of the scope of our time with the project to train a model that could tell the difference between #2 plastic bottles and #3 plastic bottles, or motor oil bottles and brake fluid bottles.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/haz-fluids.jpg" alt="Many automotive fluids come in very similar-looking bottles." title="Many automotive fluids come in very similar-looking bottles."></p>
+<p>Given enough time and resources, who knows? Maybe we could train a model that accurately recognizes 300+ items and distinguishes between similar-looking items. But we had to keep our scope realistic to be sure that we actually finished something useful in the time we had.</p>
+<p>We also considered the items that 1) users would be throwing away on a somewhat regular basis, and 2) users would usually either be unsure of how to dispose of properly or would dispose of properly. More accuracy on the important and/or common items would be more valuable to users. Some items were not grouped.</p>
+<p>By the end of this process, we managed to cluster and prune the original list of about 300 items and materials down to 73.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Image-Data-Pipelines">
+<a class="anchor" href="#Image-Data-Pipelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image Data Pipelines<a class="anchor-link" href="#Image-Data-Pipelines"> </a>
+</h3>
+<p>We figured that in order to get through gathering and labeling 70,000+ images with only four people, within our timeframe, and without any budget whatsoever, we had to get creative and automate as much of the process as possible.</p>
+<p>As explained below, the image gathering step required significant manual labor. However, we had a plan in place for automating most of the rest of the process. Below is a general outline of the image processing and labeling pipeline we built.</p>
+<ol>
+<li>Rename the images to their md5sum hash to avoid duplicates and ensure unique filenames</li>
+<li>Resize the images to save storage (and processing power later on)</li>
+<li>Discern between transparent background and non-transparent background</li>
+<li>If image is non-transparent, remove the background</li>
+<li>Automatically draw bounding boxes around the object (the foreground)</li>
+<li>If image is transparent, add a background</li>
+</ol>
+<p>The beauty of automation is once the initial infrastructure is built and working, the volume can be scaled up indefinitely. The auto-labeling functionality was not perfect by any means. But it still felt great watching this pipeline rip through large batches of images.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gather">
+<a class="anchor" href="#Gather" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gather<a class="anchor-link" href="#Gather"> </a>
+</h3>
+<p>The first part of the overall pipeline was gathering the images—around 1,000 for each of the 73 classes. This was a small pipeline in its own right, which unfortunately involved a fair bit of manual work.</p>
+<p>Timothy built the piece of the image gathering pipeline that allowed us to at least automate some of it—the downloading part. Bing ended up being the most fruitful source of images for us. Before starting we expected to use Google Images, but pivoted when it turned out that Bing's API was much more friendly to scraping and/or programmatically downloading.</p>
+<p>Timothy's blog post about the Trash Panda project can be found here: <a href="https://www.gamesbytim.com/2020/03/trash-panda.html">Games by Tim - Trash Panda</a>.</p>
+<p>We used his script, which in turn used a Python package called <a href="https://github.com/ostrolucky/Bulk-Bing-Image-downloader">Bulk-Bing-Image-downloader</a>, to gather the majority of images. (I say majority because we also used some images from Google's Open Images Dataset and COCO.)</p>
+<p>The gathering process was a mixture of downloading and sifting. As we were pulling images straight from the internet, irrelevant images inevitably found their way into the search queries somehow. For each class, we went through a iterative (and somewhat tedious) loop until we had around 1,000 images of that class. The steps were simple, yet time-consuming:</p>
+<ol>
+<li>Gather a batch of images (usually several hundred at a time) from Bing using a script written by Timothy</li>
+<li>Skim through them, removing irrelevant and/or useless images</li>
+</ol>
+<p>The latter was what made this pipeline difficult to fully automate, as we couldn't think of any good way of automatically vetting the images. (Though I did write a script to help me sift through images as quickly as possible, which will be the topic of a future blog post.) We had to be sure the images we were downloading in bulk actually depicted the class of item in question.</p>
+<p>As they say, "garbage in, garbage out."</p>
+<p>And in case you weren't aware, the internet is full of garbage.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Annotate">
+<a class="anchor" href="#Annotate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Annotate<a class="anchor-link" href="#Annotate"> </a>
+</h3>
+<p>To train an object detection model, each image in the training dataset must be annotated with rectangular bounding boxes (or, more accurately, the coordinates that define the bounding box) surrounding each of the objects belonging to a class that we want the model to recognize. These are used as the label, or target, for the model—i.e. what the model will be trying to predict.</p>
+<p>Trevor came up with an idea to automate the labeling part of the process—arguably the most time-intensive part. Basically, the idea was to use images that feature items over transparent backgrounds. All of the major search engines allow an advanced search for transparent images. If the item is the only object in the image, it is relatively simple and straightforward to write a script that draws a bounding box around it.</p>
+<p>If you'd like some more detail on this, Trevor wrote a blog post about it.</p>
+<blockquote>
+<p><a href="https://tclack88.github.io/blog/code/2020/02/17/automated-bounding-boxes.html">automated bbox</a></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Automated-Background-Removal">
+<a class="anchor" href="#Automated-Background-Removal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Automated Background Removal<a class="anchor-link" href="#Automated-Background-Removal"> </a>
+</h3>
+<p>There was one big issue with this auto-labeling process. Finding a thousand unique images of a single class of object is already something of a task. And depending on the object, finding that many without backgrounds is virtually impossible.</p>
+<p>For the images that had backgrounds, we would either have to manually label them, or find a way to automate the process and build it into the pipeline. Because the script to label images without backgrounds was already written and working, we decided to find a way of automatically removing the background from images.</p>
+<p>This is the part of the pipeline that I built.</p>
+<p>I'll give a brief overview here of how I built a system for automatically removing backgrounds from images. If you're curious about the details, I wrote a separate blog post on the topic:</p>
+<blockquote>
+<p><a href="https://tobias.fyi/blog/automated-image-background-removal-python/">Automated Image Background Removal with Python</a>
+I tested out a few different methods of image background removal, with varying degrees of success. The highest quality results came from creating a batch task in Adobe Photoshop, as whatever algorithm powers its "Select Foreground" functionality is very consistent and accurate. However, we could not use this method because it could not be added to the pipeline—I was the only one with a license, meaning the speed of my computer and internet could cause a major bottleneck.</p>
+</blockquote>
+<p>Another method I tested out was the OpenCV implementation of an algorithm called <a href="https://www.docs.opencv.org/trunk/d8/d83/tutorial_py_grabcut.html">GrabCut</a>. Long story short, I wasn't able to get the quality we needed from it, as can be seen below.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/opencv-grabcut-attempt1.png" alt="First attempt with the GrabCut algorithm, using the entire image as the focal point." title="First attempt with the GrabCut algorithm, using the entire image as the focal point."></p>
+<p>The main issue is that the algorithm is "interactive". That is, it uses the coordinates of a rectangle surrounding the object in the image for which the foreground should be extracted. For best results, the coordinates are generated manually for each image. The tighter that rectangle surrounds the foreground, the better the outline will be.</p>
+<p>The above image is my attempt at simply using the entire image as the rectangle. As can be seen below, the result was much better when I tightened the rectangle around the can. I tried for many hours to find an automatable solution to this, but could not get results that were quite good enough. I decided to move onto other strategies.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/opencv-grabcut-attempt2.png" alt="Result from OpenCV GrabCut with manually-defined rectangle outlining the focal point of the image." title="Result from OpenCV GrabCut with manually-defined rectangle outlining the focal point of the image."></p>
+<p>Ultimately, I ended up building a short image processing pipeline that utilized a pre-trained image segmentation model (similar to object detection) to find the object(s) in the image. I initially built the pipeline with a library called <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>, based on PyTorch. However, after running into some issues with it, I decided to reimplement the pipeline using <a href="https://github.com/matterport/Mask_RCNN/">Mask R-CNN</a>, based on TensorFlow.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/metal-can-outline.jpg" alt="Visualized output of the image segmentation model." title="Visualized output of the image segmentation model."></p>
+<p>Part of the output of the image segmentation model is a series of coordinates that describe an outline of the object(s) in the image. I used that as a binary mask to define the area of the image that should be kept, making the rest of it transparent.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/metal-0002-clear.png" alt='Example of image after binary mask is used to "cut" out the object.' title="Example of image after binary mask is used to cut out the object."></p>
+<p>Unfortunately, I did not have much time to spend on improving the performance of the image segmentation model, and as a result there was still a fair amount of manual labeling to be done after the pipeline. I could (and should) have trained the image segmentation model using a small subset of images from each class. This would've made the output mask much more accurate and reduced the time spent fixing the labels afterwards.</p>
+<p>As it was, using only the pretrained weights, there were some object classes that it performed very well on, while for others it did not.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Running-the-Pipeline">
+<a class="anchor" href="#Running-the-Pipeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running the Pipeline<a class="anchor-link" href="#Running-the-Pipeline"> </a>
+</h3>
+<p>As with building the pipeline, we split up the 73 classes evenly amongst the four of us (around 18 classes each) and got to work gathering and labeling the images.</p>
+<p>If we'd had a couple more weeks to spend improving the pipeline, this process likely would not have taken so long or been so tedious. As it was, we spent the better part of 4 weeks gathering and labeling the dataset.</p>
+<p>I believe the pipeline did save us enough time to make it worth the extra time it took to build. Plus, I got to learn and apply some cool new tech!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="The-Model">
+<a class="anchor" href="#The-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Model<a class="anchor-link" href="#The-Model"> </a>
+</h2>
+<h3 id="Architecture">
+<a class="anchor" href="#Architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Architecture<a class="anchor-link" href="#Architecture"> </a>
+</h3>
+<p>The neural network architecture we used to train the main object detection system used in the app is called YOLOv3: You Only Look Once, version 3.</p>
+<p><img src="https://raw.githubusercontent.com/tobias-fyi/assetstash/master/visual/images/trash_panda/yologo_2.png" alt="YOLO Logo"></p>
+<p>YOLOv3 is a state-of-the-art single-shot object detection system originally written in C. One of the main reasons we used this one in particular was its speed—a benefit of single-shot algorithms. With the YOLO algorithms, object detection can be run in real time. For example, it could be run on a live security camera feed, detecting when someone enters a property.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Training">
+<a class="anchor" href="#Training" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training<a class="anchor-link" href="#Training"> </a>
+</h3>
+<p>The vast majority of the work we put into this model was building a high-quality dataset. We used transfer learning to give the model an initial training kickstart. We were able to benefit from previous training done by the algorithm's developers by loading the weights from convolutional layers that were trained on ImageNet.</p>
+<p>Our model was trained on a GPU-enabled AWS Sagemaker instance. After about 60 hours, our model reached a total average precision of 54.71%.</p>
+<p>As expected, the model performs much better on certain classes of objects. The more easily recognizable classes (tires, printers, disks, digital cameras, plastic bottles) had average precisions in the 80-90% range.</p>
+<p>On the other hand, the lower precision object classes were usually those that took on a wider variety of shapes, textures, and colors. For example, musical instruments, food waste, office supplies. It makes sense that, given a similar amount of training data, classes like this would be more difficult to distinguish.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is the breakdown for the 13,000 weights - mAP (mean average precision):</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">detections_count</span> <span class="o">=</span> <span class="mi">82369</span><span class="p">,</span> <span class="n">unique_truth_count</span> <span class="o">=</span> <span class="mi">10934</span>  
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">aerosol_cans</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">54.87</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">54</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">aluminium_foil</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">42.11</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">22</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ammunition</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">55.38</span><span class="o">%</span>     <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">61</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">49</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">auto_parts</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">41.70</span><span class="o">%</span>     <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">batteries</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">62.19</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">92</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">44</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">bicycles</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">79.86</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">86</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">22</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cables</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">64.81</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">76</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">40</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cardboard</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">52.99</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">41</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cartridge</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">70.16</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">68</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cassette</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">53.45</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cd_cases</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">80.11</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cigarettes</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">29.43</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">38</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">56</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cooking_oil</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">69.23</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">61</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">cookware</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">70.76</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">81</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">83</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">corks</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">57.99</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">55</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">32</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">crayons</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">52.43</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">44</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">desktop_computers</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">75.17</span><span class="o">%</span>     <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">34</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">17</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">digital_cameras</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">93.40</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">120</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">18</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">disks</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">90.14</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">19</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">doors</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">0.00</span><span class="o">%</span>          <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">electronic_waste</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">73.97</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">21</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">eyeglasses</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">21.75</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">37</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">fabrics</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">52.17</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">69</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">52</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">fire_extinguishers</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">30.32</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">floppy_disks</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">78.26</span><span class="o">%</span>          <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">83</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">53</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">food_waste</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">19.16</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">28</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">22</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">26</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">furniture</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">3.45</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">27</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">game_consoles</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">58.90</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">19</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">28</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">gift_bags</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">65.97</span><span class="o">%</span>     <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">72</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">48</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">29</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">glass</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">72.21</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">149</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">49</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">glass_container</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">0.00</span><span class="o">%</span>        <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">31</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">green_waste</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">57.38</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">61</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">55</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">hardware</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">24.78</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">28</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">62</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">33</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">hazardous_fluid</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">79.06</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">85</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">34</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">heaters</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">71.18</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">54</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">35</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">home_electronics</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">32.91</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">83</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">92</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">laptop_computers</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">41.66</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">95</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">55</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">37</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">large_appliance</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">5.91</span><span class="o">%</span>        <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">38</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">38</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">lightbulb</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">28.36</span><span class="o">%</span>     <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">61</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">28</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">39</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">medication_containers</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">59.85</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">88</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">46</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">medications</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">55.37</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">68</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">39</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">41</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">metal_cans</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">52.21</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">82</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">mixed_paper</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">37.32</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">43</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">43</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">mobile_device</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">63.24</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">151</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">97</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">44</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">monitors</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">39.15</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">75</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">77</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">musical_instruments</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">20.67</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">44</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">46</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">nail_polish</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">84.06</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">105</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">47</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">office_supplies</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">7.01</span><span class="o">%</span>        <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">52</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">48</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">paint</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">47.56</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">54</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">49</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">paper_cups</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">76.20</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">85</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">32</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">pet_waste</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">31.60</span><span class="o">%</span>     <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">51</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">pizza_boxes</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">61.07</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">69</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">38</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">52</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">plastic_bags</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">31.45</span><span class="o">%</span>          <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">39</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">36</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">53</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">plastic_bottles</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">77.49</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">303</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">92</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">54</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">plastic_caps</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">22.99</span><span class="o">%</span>          <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">55</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">plastic_cards</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">57.51</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">45</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">56</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">plastic_clamshells</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">74.12</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">57</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">plastic_containers</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">71.93</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">104</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">47</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">58</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">power_tools</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">75.21</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">77</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">58</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">59</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">printers</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">88.06</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">106</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">62</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">propane_tanks</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">62.89</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">61</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">scrap_metal</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">0.00</span><span class="o">%</span>            <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">62</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">shoes</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">83.53</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">63</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">small_appliances</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">80.61</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">93</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">34</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">smoke_detectors</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">79.73</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">sporting_goods</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">3.34</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">66</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">tires</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">83.31</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">77</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">11</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">67</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">tools</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">69.69</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">113</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">37</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">68</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">toothbrushes</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">2.92</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">69</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">toothpaste_tubes</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">59.78</span><span class="o">%</span>      <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">35</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">9</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">70</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">toy</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">49.70</span><span class="o">%</span>           <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">47</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">71</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">vehicles</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">4.51</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">72</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">water_filters</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">47.91</span><span class="o">%</span>         <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">73</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">wood</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">76.15</span><span class="o">%</span>          <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">105</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">51</span><span class="p">)</span> 
+<span class="n">class_id</span> <span class="o">=</span> <span class="mi">74</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">wrapper</span><span class="p">,</span> <span class="n">ap</span> <span class="o">=</span> <span class="mf">72.45</span><span class="o">%</span>       <span class="p">(</span><span class="n">TP</span> <span class="o">=</span> <span class="mi">67</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span> 
+ <span class="k">for</span> <span class="n">conf_thresh</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">precision</span> <span class="o">=</span> <span class="mf">0.65</span><span class="p">,</span> <span class="n">recall</span> <span class="o">=</span> <span class="mf">0.41</span><span class="p">,</span> <span class="n">F1</span><span class="o">-</span><span class="n">score</span> <span class="o">=</span> <span class="mf">0.50</span> 
+ <span class="k">for</span> <span class="n">conf_thresh</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">TP</span> <span class="o">=</span> <span class="mi">4507</span><span class="p">,</span> <span class="n">FP</span> <span class="o">=</span> <span class="mi">2430</span><span class="p">,</span> <span class="n">FN</span> <span class="o">=</span> <span class="mi">6427</span><span class="p">,</span> <span class="n">average</span> <span class="n">IoU</span> <span class="o">=</span> <span class="mf">51.08</span> <span class="o">%</span> 
+ <span class="n">IoU</span> <span class="n">threshold</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">%</span><span class="p">,</span> <span class="n">used</span> <span class="n">Area</span><span class="o">-</span><span class="n">Under</span><span class="o">-</span><span class="n">Curve</span> <span class="k">for</span> <span class="n">each</span> <span class="n">unique</span> <span class="n">Recall</span> 
+ <span class="n">mean</span> <span class="n">average</span> <span class="n">precision</span> <span class="p">(</span><span class="n">mAP</span><span class="o">@</span><span class="mf">0.50</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.523220</span><span class="p">,</span> <span class="ow">or</span> <span class="mf">52.32</span> <span class="o">%</span> 
+<span class="n">Total</span> <span class="n">Detection</span> <span class="n">Time</span><span class="p">:</span> <span class="mi">564</span> <span class="n">Seconds</span>
+<span class="n">Set</span> <span class="o">-</span><span class="n">points</span> <span class="n">flag</span><span class="p">:</span>
+ <span class="err">`</span><span class="o">-</span><span class="n">points</span> <span class="mi">101</span><span class="err">`</span> <span class="k">for</span> <span class="n">MS</span> <span class="n">COCO</span> 
+ <span class="err">`</span><span class="o">-</span><span class="n">points</span> <span class="mi">11</span><span class="err">`</span> <span class="k">for</span> <span class="n">PascalVOC</span> <span class="mi">2007</span> <span class="p">(</span><span class="n">uncomment</span> <span class="err">`</span><span class="n">difficult</span><span class="err">`</span> <span class="ow">in</span> <span class="n">voc</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> 
+ <span class="err">`</span><span class="o">-</span><span class="n">points</span> <span class="mi">0</span><span class="err">`</span> <span class="p">(</span><span class="n">AUC</span><span class="p">)</span> <span class="k">for</span> <span class="n">ImageNet</span><span class="p">,</span> <span class="n">PascalVOC</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">2012</span><span class="p">,</span> <span class="n">your</span> <span class="n">custom</span> <span class="n">dataset</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deployment">
+<a class="anchor" href="#Deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment<a class="anchor-link" href="#Deployment"> </a>
+</h3>
+<p>In order to utilize our hard-earned trained weights for inference in the app, I built an object detection API with Flask and used Docker to deploy it to AWS Elastic Beanstalk.</p>
+<p>The trained weights were loaded into a live network using OpenCV, which can then be used for inference (prediction; detecting objects). Once a user takes a photo in the app, it is encoded and sent to the detection API. The API decodes the image and passes it into the live network running with the trained weights. The network runs inference on the image and sends back the class of item with the highest predicted probability.</p>
+<p>Again, I go into much greater detail on the API in a separate blog post (link to come, once it's published).
+
+</p>
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YbEzwob7PLw" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h2 id="Final-Thoughts">
+<a class="anchor" href="#Final-Thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Thoughts<a class="anchor-link" href="#Final-Thoughts"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Potential-Improvements">
+<a class="anchor" href="#Potential-Improvements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Potential Improvements<a class="anchor-link" href="#Potential-Improvements"> </a>
+</h3>
+<p>Although we had eight weeks for this project, we were starting with a completely green field. Therefore, at least the first two weeks were dedicated to discussions and planning.</p>
+<p>The result of scope management is features and ideas left unimplemented. At the beginning, the entire team brainstormed a lot about potential ideas for the app. And throughout the project, the machine learning team was always thinking and discussing potential improvements. Here is a brief summary of some of them.</p>
+<p>The first and most obvious one is to simply expand the model by gathering and labeling an even wider variety and even greater numbers of images. By breaking out the grouped items into more specific classes and gathering more images, the model could be trained to distinguish between some of the visually similar (though materially different) objects.</p>
+<p>Furthermore, there are some low-hanging fruit that would likely make the model more robust. One of those that we did not get to explore due to lack of time is image augmentation. In a nutshell, image augmentation is a method of artificially growing an image dataset by "creating" new images from the existing ones by transforming or otherwise manipulating them.</p>
+<p>These augmentations could include changing the color, crop, skew, rotation, and even combining multiple images. The labels are also transformed to match the location and size of the transformed objects in each image. Not only does this process help create more training data, but it can also help the model extract more of the underlying features of the objects, allowing it to be more robust to a greater variety of lighting conditions and camera angles.</p>
+<p>Another way to increase the size and variety of the dataset would be to add a feature that gathers the images (and labels) taken by the user. After every prediction that is served, the user could be presented with a box containing two buttons, one indicating that the prediction was correct, the other, incorrect. The correct ones could go straight to the server to wait until the next model training round. And if the user indicates that the predicted class was incorrect, they could be presented with an interface to draw a box around the object and choose the correct class. Then that image and label would be sent to the server to be used in training.</p>
+<p>The last idea was one that the entire team discussed at one point, though is a feature that would likely only be possible with some kind of financial backing. The idea is to implement a system that recognizes when many of a similar type of object are detected—those need to be recycled at the same facility, for example—and can pay drivers to pick all of those items up and take them to the proper facilities. In other words, be the "UBER for recycling".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Team-Links">
+<a class="anchor" href="#Team-Links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Links<a class="anchor-link" href="#Team-Links"> </a>
+</h3>
+<p>I said it before and I'll say it again: the team I worked with on this project was top-notch. Here they are in all of their glory, with all of their portfolios/blogs/GitHubs (those that have them) in case you want to check out their other work.</p>
+<p>Machine learning</p>
+<ul>
+<li><a href="https://tobias.fyi/">Tobias Reaper</a></li>
+<li><a href="https://tclack88.github.io/">Trevor Clack</a></li>
+<li><a href="https://veramendes.github.io/">Vera Mendes</a></li>
+<li><a href="https://www.gamesbytim.com/">Timothy Hsu</a></li>
+</ul>
+<p>Web development</p>
+<ul>
+<li><a href="https://markhalls.dev/">Mark Halls</a></li>
+<li><a href="https://www.markartishuk.com/">Mark Artishuk</a></li>
+<li><a href="https://github.com/colinbazzano">Colin Bazzano</a></li>
+<li><a href="https://github.com/CJLucido">Carlo Lucido</a></li>
+</ul>
+<p>User Experience</p>
+<ul>
+<li><a href="https://www.kendramckernan.com/">Kendra McKernan</a></li>
+<li>Lynn Baxter</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Other-Links">
+<a class="anchor" href="#Other-Links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Links<a class="anchor-link" href="#Other-Links"> </a>
+</h3>
+<p>I linked to this video above but figured I'd include it here as well. It's the video that Trevor created to pitch the idea (originally called 'Recycle This?') to the Lambda Labs coordinators. Also included is another video he created to demo the final product.
+
+</p>
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/oVh8fccQHZQ" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YbEzwob7PLw" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+I was one of the presenters of our app for the final demos to both our cohort and to the entire school. Links to those videos are below.
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7g_kUKm5QIY?t=1365" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/kbdNZ5NrJhc" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+Here is a video (thanks to Trevor) showing the progress of the interface at various stages throughout the project.
+
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7KWUMH-beOc" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As always, thanks for reading, and I'll see you in the next one!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/fastfyi/workshop/trash-panda" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastfyi/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastfyi/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastfyi/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/fastfyi/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/fastfyi/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
