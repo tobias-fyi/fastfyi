@@ -1,1 +1,1 @@
-Sitemap: https://tobias-fyi.github.io/fastfyi/sitemap.xml
+Sitemap: https://tobias.fyi/sitemap.xml
