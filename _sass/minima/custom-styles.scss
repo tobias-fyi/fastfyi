@@ -2,10 +2,40 @@
 /*--- IMPORT STYLES FOR FASTPAGES ---*/
 @import "minima/fastpages-styles";   
 
-
+// Colors
+$maroon:        #7d3545;
+$light:         #f6f6f6;
+$dark:          #131313;
+$maroon-dark:   #401b33;
 
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
 @import "minima/fastpages-dracula-highlight"; 
+
+
+// Body text (serif) - Crimson Text
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
+
+.page-content {
+  font-family: "Crimson Text", serif !important;
+}
+
+// Monospace - Inconsolata
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+
+pre {
+  font-family: "Ligconsolata-Regular", "Inconsolata", monospace !important;
+}
+
+// Horizontal lines
+hr, .rule {
+  color: $maroon !important;
+  border-color: $maroon;
+}
+
+a {
+  color: $maroon !important;
+}
+
