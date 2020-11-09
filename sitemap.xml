@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://tobias-fyi.github.io/fastfyi/workshop/print-fiction</loc>
+<lastmod>2019-10-25T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://tobias-fyi.github.io/fastfyi/workshop/post-here</loc>
 <lastmod>2020-01-12T00:00:00-06:00</lastmod>
 </url>
