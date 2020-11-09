@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 .highlight .c { color: #998; font-style: italic; }
 
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
@@ -477,5 +479,13 @@ pre code { font-size: 15px !important; }
 .highlight .gd { color: #ff5555; }
 
 p code { font-size: 19px; }
+
+.page-content { font-family: "Crimson Text", serif !important; }
+
+pre { font-family: "Ligconsolata-Regular", "Inconsolata", monospace !important; }
+
+hr, .rule { color: #7d3545 !important; border-color: #7d3545; }
+
+a { color: #7d3545 !important; }
 
 /*# sourceMappingURL=style.css.map */
