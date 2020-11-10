@@ -129,11 +129,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#Imports-and-Configuration">Imports and Configuration </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
 <li class="toc-entry toc-h2"><a href="#The-Data">The Data </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Scraping">Scraping </a></li>
@@ -228,7 +224,7 @@ window.onload = wrap_img;
 <h2 id="Introduction">
 <a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
 </h2>
-<p><code>print(fiction)</code> is a solo project I worked on to explore the data on and around fictional stories.</p>
+<p>print(fiction) is a solo project I worked on to explore the data on and around fictional stories.</p>
 <p>I used Scrapy to scrape metadata for over 20,000 books from GoodReads and used it to train a series of machine learning classifiers. The final version of the model classified books as either fiction or nonfiction with ~80% accuracy.</p>
 <p>The dataset is freely available for download on <a href="https://github.com/tobias-fyi/print-fiction/blob/master/assets/must_read_books.csv">GitHub</a>.</p>
 <p>I built an interactive dashboard using Plotly Dash that can be used to tinker with the model parameters and view the resulting prediction in real time.</p>
@@ -264,9 +260,7 @@ window.onload = wrap_img;
 <p><em>What separates fact from fiction?</em></p>
 </blockquote>
 <p>...which is really just a cliché way of saying I wanted to explore the differences between nonfiction and fiction stories. My favorite method of consuming science-fiction is through books. Therefore, I chose to look at the differences between fiction and nonfiction books.</p>
-<p>Without diving into the actual content of books (that's a project for a later time when I have more experience with natural language processing), my goal was to look for patterns in the book metadata that could distinguish the two genres.</p>
-<p>One last quick note before getting into it.</p>
-<p>I'm not going to walk through every single step (though I'll do my best to paint the whole picture) or show the actual code in this article. If you're curious about the nitty-gritty details and code I wrote for any of the steps, the Jupyter notebooks found at the link below walk through all of it.</p>
+<p>Without diving into the actual content of books, my goal was to look for patterns in the book metadata that could distinguish the two classes of books.</p>
 
 </div>
 </div>
@@ -274,61 +268,35 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Imports-and-Configuration">
-<a class="anchor" href="#Imports-and-Configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Imports and Configuration<a class="anchor-link" href="#Imports-and-Configuration"> </a>
-</h3>
+<p>Imports and Configuration</p>
+
 </div>
 </div>
 </div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># === General Imports === #</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">uniform</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">uniform</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># === Configure === #</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="mi">200</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preprocessing</span>
+<span class="c1"># === ML Imports === #</span>
+<span class="c1"># Preprocessing</span>
 <span class="kn">import</span> <span class="nn">category_encoders</span> <span class="k">as</span> <span class="nn">ce</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
@@ -353,6 +321,7 @@ window.onload = wrap_img;
 </div>
 </div>
 
+    </details>
 </div>
     
 
@@ -399,71 +368,10 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datapath</span> <span class="o">=</span> <span class="s2">"/Users/Tobias/workshop/vela/ds/interview_prep/practice/print-fiction/assets/json_data"</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bookfiles</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># List of book json files to be included in the books dataframe</span>
-    <span class="s2">"book_must_read_01_20.jl"</span><span class="p">,</span>
-    <span class="s2">"book_must_read_21_200.jl"</span><span class="p">,</span>
-    <span class="s2">"book_must_read_201_216.jl"</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="c1"># Create list of filepaths from book file names</span>
-<span class="n">bookpaths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datapath</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">bookfiles</span><span class="p">]</span>
-
-<span class="n">bookpaths</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>['/Users/Tobias/workshop/vela/ds/interview_prep/practice/print-fiction/assets/json_data/book_must_read_01_20.jl',
- '/Users/Tobias/workshop/vela/ds/interview_prep/practice/print-fiction/assets/json_data/book_must_read_21_200.jl',
- '/Users/Tobias/workshop/vela/ds/interview_prep/practice/print-fiction/assets/json_data/book_must_read_201_216.jl']</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Functions to combine files into single DataFrame and do some preprocessing</p>
+<p>In case you're curious, here are some functions I wrote to read and combine json files into single DataFrame and do some preprocessing.</p>
 
 </div>
 </div>
@@ -471,6 +379,9 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
@@ -491,12 +402,16 @@ window.onload = wrap_img;
 </div>
 </div>
 
+    </details>
 </div>
     
 
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
@@ -531,12 +446,16 @@ window.onload = wrap_img;
 </div>
 </div>
 
+    </details>
 </div>
     
 
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
@@ -563,12 +482,16 @@ window.onload = wrap_img;
 </div>
 </div>
 
+    </details>
 </div>
     
 
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
@@ -580,11 +503,6 @@ window.onload = wrap_img;
     <span class="n">df</span> <span class="o">=</span> <span class="n">json_cat</span><span class="p">(</span><span class="n">paths_list</span><span class="p">)</span>
 
     <span class="c1"># === Initial wrangling === #</span>
-    <span class="c1"># I will address these three steps later on</span>
-    <span class="c1"># df = df.dropna(subset=["genres"])  # Drop rows with null "genres"</span>
-    <span class="c1"># df = encode_book_genres(df)  # Break out genres into top 30</span>
-    <span class="c1"># df = book_pub_date(df)  # Break out publish_date into components</span>
-
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"url"</span><span class="p">])</span>  <span class="c1"># Drop duplicate records</span>
     <span class="c1"># Format column names with pyjanitor</span>
     <span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">clean_names</span><span class="p">())</span>
@@ -611,17 +529,10 @@ window.onload = wrap_img;
 </div>
 </div>
 
+    </details>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Create and export books DataFrame</p>
-
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -919,10 +830,7 @@ dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This version is directly from the scraping, minimal processing</span>
-<span class="n">data_path</span> <span class="o">=</span> <span class="s2">"assets/must_read_books-01.csv"</span>
-
-<span class="n">books</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"assets/must_read_books-01.csv"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">books</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -1498,6 +1406,9 @@ memory usage: 3.4+ MB
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
@@ -1509,6 +1420,7 @@ memory usage: 3.4+ MB
 </div>
 </div>
 
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -1556,6 +1468,7 @@ dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import missingno as msno</span>
 <span class="n">msno</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">books</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Null values by feature"</span><span class="p">)</span>
+<span class="c1"># Settings for saving as image</span>
 <span class="c1"># plt.tight_layout()</span>
 <span class="c1"># plt.savefig("null_values_by_feature.png", dpi=80)</span>
 </pre></div>
@@ -1606,11 +1519,15 @@ dtype: int64</pre>
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">encode_book_genres</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># === Encode the 'genres' feature === #</span>
+<span class="k">def</span> <span class="nf">encode_book_genres</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
     <span class="sd">"""Deconcatenates top 30 book genres into</span>
 <span class="sd">    separate features, OneHotEncoding style.</span>
 <span class="sd">    """</span>
@@ -1656,6 +1573,7 @@ dtype: int64</pre>
 </div>
 </div>
 
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
