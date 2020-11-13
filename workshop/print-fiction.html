@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      67 min read
+      66 min read
     
 </span></p>
 
@@ -227,18 +227,12 @@ window.onload = wrap_img;
 <p>print(fiction) is a solo project I worked on to explore the data on and around fictional stories.</p>
 <p>I used Scrapy to scrape metadata for over 20,000 books from GoodReads and used it to train a series of machine learning classifiers. The final version of the model classified books as either fiction or nonfiction with ~80% accuracy.</p>
 <p>The dataset is freely available for download on <a href="https://github.com/tobias-fyi/print-fiction/blob/master/assets/must_read_books.csv">GitHub</a>.</p>
-<p>I built an interactive dashboard using Plotly Dash that can be used to tinker with the model parameters and view the resulting prediction in real time.</p>
-<p>You can find the current live version of the app here:</p>
-
+<p>I built an interactive dashboard using Plotly Dash that can be used to tinker with the model parameters and view the resulting prediction in real time.
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>You can find the current live version of the app <a href="http://print-fiction.herokuapp.com/">here</a>.
 </div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote>
-<p><a href="http://print-fiction.herokuapp.com/">print(fiction)</a></p>
-</blockquote>
 
 </div>
 </div>
@@ -823,164 +817,6 @@ dtype: int64</pre>
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"assets/must_read_books-01.csv"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">books</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(21514, 21)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>url</th>
-      <th>title</th>
-      <th>author</th>
-      <th>num_ratings</th>
-      <th>num_reviews</th>
-      <th>avg_rating</th>
-      <th>num_pages</th>
-      <th>language</th>
-      <th>publish_date</th>
-      <th>original_publish_year</th>
-      <th>genres</th>
-      <th>characters</th>
-      <th>series</th>
-      <th>places</th>
-      <th>asin</th>
-      <th>0_rating_count</th>
-      <th>1_rating_count</th>
-      <th>2_rating_count</th>
-      <th>3_rating_count</th>
-      <th>4_rating_count</th>
-      <th>5_rating_count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>https://www.goodreads.com/book/show/323355.The...</td>
-      <td>The Book of Mormon: Another Testament of Jesus...</td>
-      <td>Anonymous</td>
-      <td>71355.0</td>
-      <td>5704.0</td>
-      <td>4.37</td>
-      <td>531.0</td>
-      <td>English</td>
-      <td>2013-10-22 00:00:00</td>
-      <td>1830.0</td>
-      <td>['Lds', 'Church', 'Christianity', 'Religion', ...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7520.0</td>
-      <td>2697.0</td>
-      <td>2521.0</td>
-      <td>1963.0</td>
-      <td>56654.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>https://www.goodreads.com/book/show/28862.The_...</td>
-      <td>The Prince</td>
-      <td>Niccolò Machiavelli</td>
-      <td>229715.0</td>
-      <td>7261.0</td>
-      <td>3.81</td>
-      <td>140.0</td>
-      <td>English</td>
-      <td>2003-06-01 00:00:00</td>
-      <td>1513.0</td>
-      <td>['European Literature', 'Italian Literature', ...</td>
-      <td>['Theseus (mythology)', 'Alexander the Great',...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>5254.0</td>
-      <td>16827.0</td>
-      <td>61182.0</td>
-      <td>80221.0</td>
-      <td>66231.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>https://www.goodreads.com/book/show/46654.The_...</td>
-      <td>The Foundation Trilogy</td>
-      <td>Isaac Asimov</td>
-      <td>83933.0</td>
-      <td>1331.0</td>
-      <td>4.40</td>
-      <td>679.0</td>
-      <td>English</td>
-      <td>1974-01-01 00:00:00</td>
-      <td>1953.0</td>
-      <td>['Science Fiction', 'Classics', 'Fiction']</td>
-      <td>['Hari Seldon', 'Salvor Hardin', 'Hober Mallow...</td>
-      <td>Foundation (Publication Order) #1-3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>477.0</td>
-      <td>1521.0</td>
-      <td>9016.0</td>
-      <td>25447.0</td>
-      <td>47472.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1104,7 +940,7 @@ memory usage: 3.4+ MB
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash">
-    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>Dropping the rows with null <code>genres</code> has to happen here in order to complete the data type conversion directly below this.
 </div>
 
@@ -1248,7 +1084,7 @@ memory usage: 3.4+ MB
 <p>This step was very important, as I used the genres to engineer the <code>fiction</code> target.
 </p>
 <div class="flash">
-    <svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>these steps have to happen after the <code>genre</code> null values are removed.
 </div>
 
